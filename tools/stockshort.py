@@ -945,11 +945,110 @@ def scene_decoder(img, v, t, spec, cues):
         y += 270
 
 
+def scene_shift(img, v, t, spec, cues):
+    """Before -> after: two big numbers with an arrow. The 'what changed' beat."""
+    d = ImageDraw.Draw(img)
+    if v.get("title"):
+        ctext(d, 440, v["title"].upper(), fit_font(d, v["title"].upper(), "bold", 52, 960), C["muted"] + (A(t / 0.25),))
+    t0 = cues.at(v["from"].get("at"), 0.05)
+    t1 = cues.at(v["to"].get("at"), cues.dur * 0.5)
+    y0, h = 560, 400
+    boxes = ((70, 470, v["from"], t0, "muted"), (610, 1010, v["to"], t1, v["to"].get("color", "accent")))
+    for k, (x0, x1, it, tk, c) in enumerate(boxes):
+        if t < tk:
+            continue
+        p = ease((t - tk) / 0.3)
+        sc = 0.92 + 0.08 * pop((t - tk) / 0.35)
+        cx, cy = (x0 + x1) // 2, y0 + h // 2
+        w2, h2 = int((x1 - x0) * sc), int(h * sc)
+        col = colr(c, "muted") if k == 0 else colr(c, "accent")
+        card(img, (cx - w2 // 2, cy - h2 // 2, cx + w2 // 2, cy + h2 // 2), radius=36,
+             fill=(col + (int(46 * p),)) if k else (255, 255, 255, int(20 * p)))
+        d = ImageDraw.Draw(img)
+        if k:
+            d.rounded_rectangle((cx - w2 // 2, cy - h2 // 2, cx + w2 // 2, cy + h2 // 2), radius=36, outline=col + (A(p),), width=5)
+        val = str(it["value"])
+        ctext(d, cy - 30, val, fit_font(d, val, "bold", 130, (x1 - x0) - 50), (C["text"] if k else C["muted"]) + (A(p),), x=cx)
+        for i, line in enumerate(wrap(d, it.get("label", ""), font("medium", 40), (x1 - x0) - 60)[:2]):
+            ctext(d, cy + 90 + i * 50, line, font("medium", 40), C["muted"] + (A(p),), x=cx)
+    if t >= t1:
+        q = ease((t - t1 + 0.15) / 0.25)
+        ax = 540
+        d = ImageDraw.Draw(img)
+        d.polygon([(ax - 38, y0 + h // 2 - 36), (ax + 14, y0 + h // 2 - 36), (ax + 14, y0 + h // 2 - 62),
+                   (ax + 60, y0 + h // 2), (ax + 14, y0 + h // 2 + 62), (ax + 14, y0 + h // 2 + 36),
+                   (ax - 38, y0 + h // 2 + 36)], fill=C["accent"] + (A(q),))
+    if v.get("sub"):
+        ts = cues.at(v.get("sub_at"), t1 + 0.9)
+        for i, line in enumerate(wrap(d, v["sub"], font("bold", 54), 940)):
+            ctext(d, y0 + h + 110 + i * 68, line, font("bold", 54), C["text"] + (A((t - ts) / 0.3),))
+
+
+def scene_receipts(img, v, t, spec, cues):
+    """'What the sources say': up to 3 source cards with a check mark. Builds trust in the sourcing."""
+    d = ImageDraw.Draw(img)
+    title = v.get("title", "What the sources say")
+    ctext(d, 430, title.upper(), fit_font(d, title.upper(), "bold", 56, 960), C["muted"] + (A(t / 0.25),))
+    items = v["items"][:3]
+    n = len(items)
+    y = 510
+    for k, it in enumerate(items):
+        tk = cues.at(it.get("at"), cues.spread(k, n, 0.05, 0.7))
+        if t < tk:
+            y += 270
+            continue
+        p = ease((t - tk) / 0.3)
+        card(img, (70, y + int((1 - p) * 40), W - 70, y + 240 + int((1 - p) * 40)), radius=32, fill=(255, 255, 255, int(20 * p)))
+        d = ImageDraw.Draw(img)
+        yy = y + int((1 - p) * 40)
+        src = it["source"].upper()
+        fs = font("bold", 34)
+        d.rounded_rectangle((110, yy + 28, 110 + text_w(d, src, fs) + 40, yy + 82), radius=14, fill=(245, 247, 251, A(p)))
+        d.text((130, yy + 55), src, font=fs, fill=(14, 18, 30, A(p)), anchor="lm")
+        fb = font("bold", 48)
+        for i, line in enumerate(wrap(d, it["fact"], fb, 700)[:2]):
+            d.text((110, yy + 128 + i * 56), line, font=fb, fill=C["text"] + (A(p),), anchor="lm")
+        q = t - tk - 0.25
+        if q > 0:
+            _mark(d, W - 150, yy + 120, 44, "good", scale=1 + 1.2 * (1 - ease(q / 0.18)), alpha=A(q / 0.1))
+        y += 270
+
+
+def scene_qa(img, v, t, spec, cues):
+    """Question / answer pairs (generic labels, never invented people). 1-2 pairs."""
+    d = ImageDraw.Draw(img)
+    y = 430
+    fq, fa = font("bold", 44), font("bold", 44)
+    for k, it in enumerate(v["items"][:2]):
+        tq = cues.at(it.get("q_at"), cues.spread(k, len(v["items"][:2]), 0.05, 0.6))
+        ta = cues.at(it.get("a_at"), tq + 1.0)
+        ql = wrap(d, it["q"], fq, 760)
+        al = wrap(d, it["a"], fa, 760)
+        hq, ha = 100 + 52 * len(ql), 100 + 52 * len(al)
+        if t >= tq:
+            p = ease((t - tq) / 0.3)
+            card(img, (70, y, 70 + 880, y + hq), radius=32, fill=(255, 255, 255, int(20 * p)))
+            d = ImageDraw.Draw(img)
+            d.text((110, y + 40), "THE QUESTION", font=font("bold", 30), fill=C["muted"] + (A(p),), anchor="lm")
+            for i, line in enumerate(ql):
+                d.text((110, y + 82 + i * 52), line, font=fq, fill=C["text"] + (A(p),), anchor="lm")
+        y += hq + 24
+        if t >= ta:
+            p = ease((t - ta) / 0.3)
+            card(img, (130, y, W - 70, y + ha), radius=32, fill=C["accent"] + (int(46 * p),))
+            d = ImageDraw.Draw(img)
+            d.rounded_rectangle((130, y, W - 70, y + ha), radius=32, outline=C["accent"] + (A(p),), width=4)
+            d.text((170, y + 40), "THE ANSWER", font=font("bold", 30), fill=C["accent"] + (A(p),), anchor="lm")
+            for i, line in enumerate(al):
+                d.text((170, y + 82 + i * 52), line, font=fa, fill=C["text"] + (A(p),), anchor="lm")
+        y += ha + 36
+
+
 SCENES = {"hook": scene_hook, "headline": scene_headline, "stat": scene_stat, "bars": scene_bars, "compare": scene_compare,
           "line": scene_line, "bullets": scene_bullets, "scorecard": scene_scorecard,
           "text": scene_text, "outro": scene_outro, "question": scene_question, "rank": scene_rank,
           "chain": scene_chain, "beatmiss": scene_beatmiss, "timeline": scene_timeline, "peers": scene_peers,
-          "mythfact": scene_mythfact, "quiz": scene_quiz, "poll": scene_poll, "decoder": scene_decoder}
+          "mythfact": scene_mythfact, "quiz": scene_quiz, "poll": scene_poll, "decoder": scene_decoder, "shift": scene_shift, "receipts": scene_receipts, "qa": scene_qa}
 
 
 # ================================================================== frame furniture
@@ -1176,6 +1275,24 @@ def collect_events(beats: list[dict]) -> list[tuple[float, str]]:
                 ev.append((st + cues.at(v[side].get("at"), 0.4 if side == "left" else 0.9), "pop"))
             if v.get("cta_at"):
                 ev.append((st + cues.at(v["cta_at"], cues.dur * 0.65), "pop"))
+            continue
+        if kind == "shift":
+            ev.append((st + cues.at(v["from"].get("at"), 0.05), "pop"))
+            t1 = cues.at(v["to"].get("at"), cues.dur * 0.5)
+            ev.append((st + t1, "whoosh1"))
+            ev.append((st + t1 + 0.2, "stamp"))
+            continue
+        if kind == "qa":
+            for k, it in enumerate(v["items"][:2]):
+                tq = cues.at(it.get("q_at"), cues.spread(k, len(v["items"][:2]), 0.05, 0.6))
+                ev.append((st + tq, "pop"))
+                ev.append((st + cues.at(it.get("a_at"), tq + 1.0), "stamp"))
+            continue
+        if kind == "receipts":
+            for k, it in enumerate(v["items"][:3]):
+                tk = cues.at(it.get("at"), cues.spread(k, len(v["items"][:3]), 0.05, 0.7))
+                ev.append((st + tk, "pop"))
+                ev.append((st + tk + 0.3, "stamp"))
             continue
         if kind == "decoder":
             for k, it in enumerate(v["items"][:3]):
