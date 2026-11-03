@@ -338,11 +338,12 @@ def scene_hook(img, v, t, spec, cues):
     ctext(d, 540, fmt_pct(pct), f, col)  # real number from frame 1 (a count-up shows wrong values)
     q = v.get("question") or v.get("note")
     if q:
-        f2 = font("bold", 84)
+        f2 = font("bold", 76)
         parts = [x.strip() for x in re.split(r"(?<=[.?!])\s+", q.upper()) if x.strip()]
         lines = [ln for part in parts for ln in wrap(d, part, f2, 980)]
+        # keep the whole question above the caption band (captions start near y 1290)
         for i, line in enumerate(lines):
-            ctext(d, 1165 + i * 100, line, f2, C["text"] if i < len(lines) - 1 else C["accent"])
+            ctext(d, 1070 + i * 88, line, f2, C["text"] if i < len(lines) - 1 else C["accent"])
     if v.get("to") is not None:
         tp = cues.at(v.get("price_at"), 0.6)
         if t > tp:
