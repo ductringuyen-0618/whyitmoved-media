@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-02",
+  "date_label": "Nov 2",
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": true,
+  "ticker": "FN",
+  "company": "Fabrinet",
+  "move_pct": 10.4,
+  "title": "Fabrinet jumped 10% while tech sank. Why? #shorts",
+  "description": "Fabrinet, which builds optical parts for AI data centers, grew revenue 51% and beat estimates. The bigger surprise was guidance far above what Wall Street expected.",
+  "hashtags": [
+    "fabrinet",
+    "FN",
+    "AI",
+    "stocks",
+    "earnings",
+    "whyitmoved"
+  ],
+  "keywords": [
+    "ten",
+    "sold",
+    "optical",
+    "reported",
+    "beat",
+    "forecast",
+    "above",
+    "jumped"
+  ],
+  "tape": [
+    "FN +10.4% after hours",
+    "Q1 revenue $1.47B, +51%",
+    "Q2 guide $1.60-1.65B",
+    "Q2 Street est ~$1.48B"
+  ],
+  "sources": [
+    {
+      "title": "Fabrinet Announces First Quarter Fiscal Year 2027 Financial Results (company release via StockTitan, Nov 2 2026)",
+      "url": "https://www.stocktitan.net/news/FN/fabrinet-announces-first-quarter-fiscal-year-2027-financial-r6i6ns0vxk75.html"
+    },
+    {
+      "title": "Fabrinet surges on robust guidance and earnings beat (Investing.com, Nov 2 2026)",
+      "url": "https://www.investing.com/news/earnings/fabrinet-surges-on-robust-guidance-and-earnings-beat-93CH-4992891"
+    },
+    {
+      "title": "Tech Stocks Pulled the Nasdaq Lower in the Stock Market Today, November 2, 2026 (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-2-2026"
+    },
+    {
+      "title": "Fabrinet is becoming a quiet winner in the AI optics buildout (MarketBeat)",
+      "url": "https://www.marketbeat.com/articles/fabrinet-is-becoming-a-quiet-winner-in-the-ai-optics-buildout/"
+    }
+  ],
+  "beats": [
+    {
+      "say": "Fabrinet just jumped ten percent after hours. On a day when tech stocks were selling off.",
+      "visual": {
+        "type": "hook",
+        "move_pct": 10.4,
+        "label": "Monday after hours",
+        "question": "Tech sold off. Why did this jump?"
+      }
+    },
+    {
+      "say": "Monday, tech stocks sold off. Then Fabrinet, which builds optical parts for AI data centers, reported after the close.",
+      "visual": {
+        "type": "timeline",
+        "title": "How Monday played out",
+        "items": [
+          {
+            "time": "Monday",
+            "text": "Tech stocks sell off",
+            "at": "Monday",
+            "color": "down"
+          },
+          {
+            "time": "After the close",
+            "text": "Fabrinet reports results",
+            "at": "Fabrinet"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Revenue beat. Earnings beat. And next quarter's forecast came in above what Wall Street expected.",
+      "visual": {
+        "type": "beatmiss",
+        "title": "Expected vs. actual",
+        "items": [
+          {
+            "label": "Revenue",
+            "expected": "$1.40B",
+            "actual": "$1.47B",
+            "verdict": "beat",
+            "at": "Revenue",
+            "actual_at": "beat"
+          },
+          {
+            "label": "Adjusted EPS",
+            "expected": "$4.19",
+            "actual": "$4.34",
+            "verdict": "beat",
+            "at": "Earnings",
+            "actual_at": "beat And"
+          },
+          {
+            "label": "Next-quarter forecast",
+            "expected": "~$1.48B",
+            "actual": "$1.60-1.65B",
+            "verdict": "beat",
+            "at": "forecast",
+            "actual_at": "above"
+          }
+        ]
+      }
+    },
+    {
+      "say": "A beat is nice. A bigger future is what moves the stock. And that's why",
+      "visual": {
+        "type": "outro",
+        "big": "A beat is nice. A bigger future moves the stock.",
+        "highlight": "bigger future",
+        "highlight_at": "bigger",
+        "cta": "Follow @whyitmoved",
+        "cta_at": "that's"
+      }
+    }
+  ],
+  "slug": "FN-2026-11-02-v3"
+}
