@@ -1,0 +1,138 @@
+{
+  "slug": "PREVIEW-QCOM-2026-11-04",
+  "chip": "PREVIEW",
+  "topic": "QCOM reports Wed",
+  "date_label": "Wed Nov 4",
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": true,
+  "title": "Qualcomm Earnings Tomorrow: 3 Things to Watch #shorts",
+  "description": "Qualcomm reports fiscal fourth-quarter results Wednesday after the close. Analysts expect about $10.1 billion in revenue, and three things stand out.",
+  "hashtags": [
+    "qualcomm",
+    "QCOM",
+    "earnings",
+    "semiconductors",
+    "stockmarket",
+    "shorts"
+  ],
+  "keywords": [
+    "tomorrow",
+    "twenty",
+    "sixty-one",
+    "ten",
+    "guidance",
+    "consensus",
+    "phones",
+    "cars",
+    "apple",
+    "pieces"
+  ],
+  "tape": [
+    "QCOM reports Wed after close",
+    "Revenue est. ~$10.1B",
+    "Own forecast $9.7-10.5B"
+  ],
+  "sources": [
+    {
+      "title": "Qualcomm Schedules Fourth Quarter and Fiscal 2026 Earnings Release and Conference Call (Oct 22 2026)",
+      "url": "https://investingnews.com/qualcomm-schedules-fourth-quarter-and-fiscal-2026-earnings-release-and-conference-call/"
+    },
+    {
+      "title": "Qualcomm Q4 2026 Earnings Date, Time & Estimates (MarketBeat)",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-11-4-qualcomm-incorporated-stock/"
+    },
+    {
+      "title": "Qualcomm Q3 FY2026 results and Q4 guidance (StockTitan, 8-K)",
+      "url": "https://www.stocktitan.net/sec-filings/QCOM/8-k-qualcomm-inc-de-reports-material-event-c8f67e4983cc.html"
+    },
+    {
+      "title": "QUALCOMM's Quarterly Earnings Preview: What You Need to Know (Barchart/Yahoo Finance)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-quarterly-earnings-preview-know-162124087.html"
+    }
+  ],
+  "beats": [
+    {
+      "say": "Qualcomm reports tomorrow. Last quarter, phones fell twenty percent from a year earlier, and cars grew sixty-one.",
+      "visual": {
+        "type": "question",
+        "kicker": "Reports tomorrow, after the close",
+        "big": "Phones fell 20%. Cars grew 61%.",
+        "highlight": "grew 61%",
+        "sub": "vs a year earlier. Here is what to watch.",
+        "sub_at": "year"
+      }
+    },
+    {
+      "say": "Analysts expect about ten point one billion dollars in revenue. The report lands after the market closes.",
+      "visual": {
+        "type": "stat",
+        "value": "$10.1B",
+        "color": "text",
+        "label": "revenue analysts expect",
+        "at": "ten",
+        "label_at": "revenue"
+      }
+    },
+    {
+      "say": "Guidance is the company's own forecast. Consensus is the average analyst forecast. Wall Street expects revenue near the middle of Qualcomm's guided range.",
+      "visual": {
+        "type": "decoder",
+        "title": "Jargon check",
+        "items": [
+          {
+            "term": "Guidance",
+            "plain": "The company's own forecast",
+            "at": "Guidance",
+            "plain_at": "own"
+          },
+          {
+            "term": "Consensus",
+            "plain": "Average analyst forecast",
+            "at": "Consensus",
+            "plain_at": "average"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Three things to watch. Phones. Cars. And Apple, which is moving to its own modems.",
+      "visual": {
+        "type": "scorecard",
+        "title": "Three things to watch",
+        "items": [
+          {
+            "label": "Phones",
+            "detail": "revenue fell 20% vs a year ago",
+            "verdict": "unknown",
+            "at": "Phones"
+          },
+          {
+            "label": "Cars",
+            "detail": "grew 61% vs a year ago",
+            "verdict": "unknown",
+            "at": "Cars"
+          },
+          {
+            "label": "Apple",
+            "detail": "moving to its own modems",
+            "verdict": "unknown",
+            "at": "Apple"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Look past the headline number. The pieces tell the story. And that's why",
+      "visual": {
+        "type": "outro",
+        "big": "Look past the headline number. The pieces tell the story.",
+        "highlight": "The pieces",
+        "highlight_at": "pieces",
+        "cta": "Follow @whyitmoved",
+        "cta_sub": "A new stock move explained daily",
+        "cta_at": "that's"
+      }
+    }
+  ]
+}

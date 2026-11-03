@@ -1,0 +1,139 @@
+{
+  "ticker": "SHOP",
+  "company": "Shopify",
+  "date": "2026-11-03",
+  "date_label": "Nov 3",
+  "move_pct": -5.7,
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": true,
+  "title": "Shopify Grew 32%. So Why Did the Stock Drop? #shorts",
+  "description": "Shopify grew revenue 32% in the third quarter, yet the stock fell about 6% on Tuesday. Total order volume and subscription sales came in a little under what analysts expected.",
+  "hashtags": [
+    "shopify",
+    "SHOP",
+    "stocks",
+    "techstocks",
+    "earnings",
+    "whyitmoved"
+  ],
+  "keywords": [
+    "shopify",
+    "thirty-two",
+    "quiz",
+    "spooked",
+    "answer",
+    "billion",
+    "expected",
+    "room",
+    "fell"
+  ],
+  "tape": [
+    "SHOP -5.7%",
+    "Revenue +32%",
+    "Order volume $119.1B",
+    "Subscriptions $836M"
+  ],
+  "sources": [
+    {
+      "title": "Shopify Sustains Rapid Growth with Revenue Up 32% and Free Cash Flow Margin of 22% (GlobeNewswire, Nov 3 2026)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/03/3394077/0/en/shopify-sustains-rapid-growth-with-revenue-up-32-and-free-cash-flow-margin-of-22.html"
+    },
+    {
+      "title": "Shopify Sinks 15% as Q3 GMV and Subscription Revenue Miss Estimates (TIKR)",
+      "url": "https://www.tikr.com/blog/shopify-sinks-15-as-q3-gmv-and-subscription-revenue-miss-estimates-not-uncommonly-good"
+    },
+    {
+      "title": "Shopify Stock Just Plunged. Here's Why I'm Not Selling (Motley Fool, Nov 3 2026)",
+      "url": "https://www.fool.com/investing/2026/11/03/shopify-stock-just-plunged-here-s-why-i-m-not-selling/"
+    },
+    {
+      "title": "Stock Market Today Live, November 3, 2026 (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    }
+  ],
+  "beats": [
+    {
+      "say": "Shopify fell about six percent on Tuesday, even though its sales jumped thirty-two percent.",
+      "visual": {
+        "type": "hook",
+        "move_pct": -5.7,
+        "label": "Tuesday afternoon",
+        "question": "Sales jumped 32%. So why the drop?"
+      }
+    },
+    {
+      "say": "Its report looked strong. Revenue up thirty-two percent. Yet shares still sold off.",
+      "visual": {
+        "type": "headline",
+        "kicker": "What happened",
+        "source": "GlobeNewswire",
+        "date": "Nov 3, 2026",
+        "headline": "Shopify Sustains Rapid Growth with Revenue Up 32% and Free Cash Flow Margin of 22%",
+        "highlight": "Revenue Up 32%",
+        "highlight_at": "Revenue"
+      }
+    },
+    {
+      "say": "Quick quiz. Which number spooked investors? A, revenue. B, cash flow. C, order volume. The answer: C. Just under what analysts expected.",
+      "visual": {
+        "type": "quiz",
+        "question": "Which number spooked investors?",
+        "options": [
+          {
+            "text": "Revenue growth",
+            "at": "revenue"
+          },
+          {
+            "text": "Cash flow",
+            "at": "cash"
+          },
+          {
+            "text": "Total order volume",
+            "at": "order"
+          }
+        ],
+        "answer": 2,
+        "reveal_at": "answer",
+        "reveal_sub": "Just under what analysts expected"
+      }
+    },
+    {
+      "say": "Order volume and subscription sales both landed a little light. With the stock priced high, there was little room for a miss. So shares fell.",
+      "visual": {
+        "type": "chain",
+        "items": [
+          {
+            "text": "Order volume missed",
+            "at": "Order"
+          },
+          {
+            "text": "Subscriptions missed",
+            "at": "subscription"
+          },
+          {
+            "text": "Little room for a miss",
+            "at": "priced"
+          },
+          {
+            "text": "Shares fell",
+            "at": "So",
+            "color": "down"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Markets react to the number they were watching, not the headline. And that's why",
+      "visual": {
+        "type": "outro",
+        "big": "Markets react to the number they were watching, not the headline.",
+        "highlight": "not the headline",
+        "highlight_at": "headline",
+        "cta": "Follow @whyitmoved",
+        "cta_sub": "A new stock move explained daily",
+        "cta_at": "that's"
+      }
+    }
+  ]
+}
