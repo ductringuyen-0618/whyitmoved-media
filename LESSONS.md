@@ -20,8 +20,10 @@ Style guidance only: it never overrides fact-checking, sourcing or no-advice rul
 | E2 | 2026-11-03 | Same-day closing-bell posts vs next-morning posts | Compare views per post by run (closing vs morning) | open |
 | E3 | 2026-11-03 | Hook question style: "So why?" vs a bold statement | Feedback run assigns once 10+ posts exist | not started |
 | E4 | 2026-11-03 | Format variety: quick take (30-34s) vs longer 36-40s videos; quiz / myth-buster / poll vs chain / scorecard | Production runs rotate formats per PLAYBOOK D; log the format used in reviews/ lines; compare avg view duration, comments and shares by format | open |
+| E5 | 2026-11-03 | Follow CTA: on-screen reason-to-follow line + caption line; spoken follow line on non-looping videos (weekly, explainer) | Daily videos show cta_sub "A new stock move explained daily" and no spoken CTA (loop kept); weekly/explainer say "Follow for one market move explained every day."; compare followers gained per post and loop completion before/after (needs 2 weeks) | open |
 
 ## Change log
+- 2026-11-03: started E5 (follow CTA wording).
 - 2026-11-03: house rule: every video is at least 30 s (quick take now 30-34 s).
 - 2026-11-03: file created.
 - 2026-11-03: added format library (quick take, myth buster, quiz, decoder, poll, chain, deal view) and experiment E4.

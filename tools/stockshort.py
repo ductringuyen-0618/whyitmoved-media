@@ -599,6 +599,9 @@ def scene_outro(img, v, t, spec, cues):
         d.rounded_rectangle((x0, 1060, x0 + w, 1060 + int(110 * max(0.2, p))), radius=55, fill=C["accent"])
         if p > 0.5:
             ctext(d, 1115, cta, f, (10, 10, 10))
+        if v.get("cta_sub") and t > tc + 0.25:
+            fs = font("medium", 44)
+            ctext(d, 1215, v["cta_sub"], fs, C["muted"] + (A((t - tc - 0.25) / 0.3),))
 
 
 def scene_question(img, v, t, spec, cues):
