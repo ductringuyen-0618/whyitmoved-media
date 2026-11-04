@@ -1,0 +1,129 @@
+{
+ "ticker": "AMD",
+ "company": "AMD",
+ "date": "2026-11-04",
+ "date_label": "Nov 4",
+ "move_pct": 3.5,
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "slug": "1_AMD-2026-11-04-cat",
+ "title": "AMD Stock Pop Cut in Half After 2027 Forecast. Why?",
+ "description": "AMD said it expects 2027 revenue to rise more than 80%, above the 77% analysts expected. The stock was up about 3.5% in early trading Wednesday, after about 7% premarket.",
+ "hashtags": [
+  "amd",
+  "AMD",
+  "stocks",
+  "AI",
+  "chips",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "forecast",
+  "eighty",
+  "Reuters",
+  "demand",
+  "beat",
+  "Nvidia",
+  "premarket",
+  "shrink"
+ ],
+ "tape": [
+  "AMD +3.5% early trading",
+  "AMD +7% premarket",
+  "2027 growth >80%, Street 77%"
+ ],
+ "sources": [
+  {
+   "title": "AMD shares jump as AI-driven data-center strength fuels growth outlook (Reuters via Investing.com, Nov 4 2026)",
+   "url": "https://www.investing.com/news/stock-market-news/amd-shares-jump-as-aidriven-datacenter-strength-fuels-growth-outlook-4998022"
+  },
+  {
+   "title": "Premarket movers: Trump Media, AI infrastructure stocks fall; AMD jumps (Investing.com, Nov 4 2026)",
+   "url": "https://www.investing.com/news/stock-market-news/premarket-movers-trump-media-ai-infrastructure-stocks-fall-amd-jumps-4998777"
+  },
+  {
+   "title": "Stocks Jump in the Stock Market Today Live, November 4, 2026 (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026"
+  }
+ ],
+ "beats": [
+  {
+   "say": "AMD forecast revenue growth above eighty percent in 2027. The stock is up three and a half percent so far.",
+   "visual": {
+    "type": "hook",
+    "move_pct": 3.5,
+    "label": "Wednesday early trading",
+    "question": "Up 7% premarket. Now 3.5%."
+   }
+  },
+  {
+   "say": "Reuters reports AMD expects 2027 revenue to rise more than eighty percent. Analysts expected seventy seven.",
+   "visual": {
+    "type": "headline",
+    "kicker": "The news",
+    "source": "Reuters",
+    "date": "Nov 4",
+    "headline": "AMD shares jump as AI-driven data-center strength fuels growth outlook",
+    "highlight": "outlook",
+    "highlight_at": "eighty",
+    "sub": "Analysts expected 77% growth",
+    "sub_at": "Analysts",
+    "at": "Reuters"
+   }
+  },
+  {
+   "say": "Why the market cares: CEO Lisa Su says AMD sees demand across its data-center business. Data-center sales beat estimates. And Reuters says the outlook points to AI spending beyond Nvidia.",
+   "visual": {
+    "type": "chain",
+    "title": "Why the market cares",
+    "items": [
+     {
+      "text": "CEO: data-center demand",
+      "at": "Why"
+     },
+     {
+      "text": "Data-center sales beat",
+      "at": "beat"
+     },
+     {
+      "text": "Beyond Nvidia, per Reuters",
+      "at": "beyond"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Premarket, AMD was up about seven percent. In early trading, about three and a half. It's still early.",
+   "visual": {
+    "type": "shift",
+    "title": "AMD stock reaction so far",
+    "from": {
+     "value": "7%",
+     "label": "Premarket",
+     "at": "Premarket"
+    },
+    "to": {
+     "value": "3.5%",
+     "label": "Early trading",
+     "at": "early",
+     "color": "up"
+    },
+    "sub": "Still early. Not a prediction.",
+    "sub_at": "still"
+   }
+  },
+  {
+   "say": "Big forecasts move stocks, but early pops can shrink. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "Early pops can shrink.",
+    "highlight": "shrink",
+    "highlight_at": "shrink",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}

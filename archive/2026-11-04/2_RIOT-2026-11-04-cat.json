@@ -1,0 +1,121 @@
+{
+ "ticker": "RIOT",
+ "company": "Riot Platforms",
+ "date": "2026-11-04",
+ "date_label": "Nov 4",
+ "move_pct": 12.8,
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "slug": "2_RIOT-2026-11-04-cat",
+ "title": "Riot Stock Up 13% After $28B AI Lease: Why?",
+ "description": "Riot Platforms signed a 15-year, roughly $28 billion lease with an unnamed AI lab for its Corsicana, Texas campus. The stock was up about 12.8% by 10 a.m. Eastern Wednesday.",
+ "hashtags": [
+  "riotplatforms",
+  "RIOT",
+  "stocks",
+  "AI",
+  "datacenters",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "twenty",
+  "lease",
+  "signed",
+  "AI",
+  "August",
+  "MARA",
+  "Thirteen",
+  "plan"
+ ],
+ "tape": [
+  "RIOT +12.8% at 10:03am ET",
+  "Lease: ~$28B over 15 years"
+ ],
+ "sources": [
+  {
+   "title": "Riot Platforms reports Q3 2026 results and Corsicana lease (company release via StockTitan, Nov 4 2026)",
+   "url": "https://www.stocktitan.net/news/RIOT/riot-platforms-reports-third-quarter-2026-financial-results-and-e5aksf5iacob.html"
+  },
+  {
+   "title": "Riot Platforms Soars on Earnings and $28 Billion Corsicana AI Lease (24/7 Wall St, Nov 4 2026)",
+   "url": "https://247wallst.com/investing/2026/11/04/riot-platforms-soars-20-on-earnings-and-28-billion-corsicana-ai-lease-cipher-digital-plunges-13-mara-drops-5/"
+  },
+  {
+   "title": "Stocks Jump in the Stock Market Today Live, November 4, 2026 (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026"
+  }
+ ],
+ "beats": [
+  {
+   "say": "Riot Platforms signed a twenty eight billion dollar deal with an AI lab. Here's the stock reaction so far.",
+   "visual": {
+    "type": "hook",
+    "move_pct": 12.8,
+    "label": "Wednesday morning",
+    "question": "A $28B AI lease. Stock reaction?"
+   }
+  },
+  {
+   "say": "Riot signed a lease for its entire Corsicana, Texas campus. The tenant is an unnamed frontier AI lab. About twenty eight billion dollars over fifteen years.",
+   "visual": {
+    "type": "headline",
+    "kicker": "The news",
+    "source": "Riot release",
+    "date": "Nov 4",
+    "headline": "Riot signs lease for entire Corsicana campus with a leading frontier AI lab",
+    "highlight": "Corsicana",
+    "highlight_at": "Corsicana",
+    "sub": "About $28B over 15 years",
+    "sub_at": "About",
+    "at": "Riot"
+   }
+  },
+  {
+   "say": "In August, this was only a nonbinding letter of intent. Now it's signed. Rival MARA says it expects to sign at least one AI lease before year end.",
+   "visual": {
+    "type": "chain",
+    "title": "What changed",
+    "items": [
+     {
+      "text": "August: letter of intent",
+      "at": "August"
+     },
+     {
+      "text": "Now: signed lease",
+      "at": "signed"
+     },
+     {
+      "text": "MARA expects a lease by year end",
+      "at": "MARA"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Thirteen percent at ten a.m. Eastern. It's still early.",
+   "visual": {
+    "type": "stat",
+    "value": "+12.8%",
+    "color": "up",
+    "label": "Riot at 10:03 a.m. ET",
+    "label_at": "ten",
+    "sub": "Still early. Not a prediction.",
+    "sub_at": "still",
+    "at": "Thirteen"
+   }
+  },
+  {
+   "say": "A signed lease is firmer than a plan. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "A signed lease is firmer.",
+    "highlight": "firmer",
+    "highlight_at": "firmer",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}
