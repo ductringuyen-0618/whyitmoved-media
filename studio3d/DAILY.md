@@ -1,5 +1,8 @@
 # Why It Moved — daily 3D clip runbook (owner Tri, Nov 4 2026)
 
+> UPDATE Nov 5 2026: the daily clip now uses the cartoon-audio-short kit. Follow studio3d/CARTOON.md for setup and build. The 3D-studio sections below remain only as a fallback.
+
+
 Direction: chase the latest news. Big moves in big companies that are trending: biggest droppers (>= 6-7%), companies backed by or tied to big tech, big-tech-wide stories. Hook -> body -> reward. No advice, no predictions, no real logos/faces, no "cartoon"/"not advice" wording. Kokoro am_michael, >= 30 s, -20 LUFS, free tools by default.
 
 ## Setup (fresh container)
