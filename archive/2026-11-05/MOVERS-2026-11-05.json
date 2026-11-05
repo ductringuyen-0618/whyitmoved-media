@@ -1,0 +1,137 @@
+{
+ "slug": "MOVERS-2026-11-05",
+ "chip": "TOP MOVERS",
+ "move_pct": -23.7,
+ "topic": "4 big moves",
+ "date_label": "Wed Nov 4",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "title": "Wednesday's 4 big stock moves: #1 FIS -24% #shorts",
+ "description": "FIS fell 23.7% on Wednesday after cutting its 2026 profit growth forecast. Here are four big stock moves from Wednesday, counted down.",
+ "hashtags": [
+  "stockmarket",
+  "stocks",
+  "FIS",
+  "AppLovin",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "twenty",
+  "went",
+  "split",
+  "fourteen",
+  "fifty",
+  "hours",
+  "cutting",
+  "future",
+  "said"
+ ],
+ "tape": [
+  "FIS -23.7%",
+  "APP +22.8% AH",
+  "DDOG -14.4%",
+  "CVS -12.5%"
+ ],
+ "sources": [
+  {
+   "title": "StockTitan, Stock Market Today, Nov 4 2026 (closing and after-hours moves)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026"
+  },
+  {
+   "title": "FIS Q3 2026 results, SEC Form 8-K exhibit",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001136893/000113689326000061/q32026ex991.htm"
+  },
+  {
+   "title": "CVS Tumbles 12% on Plan to Split Into Two Companies (24/7 Wall St.)",
+   "url": "https://247wallst.com/investing/2026/11/04/cvs-tumbles-12-on-plan-to-split-into-two-companies-despite-earnings-beat-elevance-health-rises-4-cigna-climbs-3/"
+  },
+  {
+   "title": "Datadog Announces Third Quarter 2026 Financial Results",
+   "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-third-quarter-2026-financial-results/"
+  },
+  {
+   "title": "AppLovin Q3 2026 Form 10-Q (SEC)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001751008/000175100826000069/app-20260930.htm"
+  }
+ ],
+ "beats": [
+  {
+   "say": "FIS fell almost twenty four percent on Wednesday. Four big moves, counted down. Only one went up.",
+   "visual": {
+    "type": "hook",
+    "move_pct": -23.7,
+    "label": "Wednesday close: FIS",
+    "question": "FIS led four big moves. Only one went up."
+   }
+  },
+  {
+   "say": "Number four. CVS fell twelve point five percent after announcing a plan to split into two companies.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "CVS",
+    "company": "CVS Health",
+    "move_pct": -12.5,
+    "move_at": "fell",
+    "reason": "Plans to split into two companies",
+    "reason_at": "announcing",
+    "when": "Wednesday close"
+   }
+  },
+  {
+   "say": "Number three. Datadog fell about fourteen percent. Revenue grew thirty five percent, but it expects about the same revenue next quarter.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "DDOG",
+    "company": "Datadog",
+    "move_pct": -14.4,
+    "move_at": "fell",
+    "reason": "Revenue +35%, but next quarter looks flat",
+    "reason_at": "Revenue",
+    "when": "Wednesday close"
+   }
+  },
+  {
+   "say": "Number two. AppLovin jumped nearly twenty three percent after hours, as revenue rose fifty five percent.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "APP",
+    "company": "AppLovin (after hours)",
+    "move_pct": 22.8,
+    "move_at": "jumped",
+    "reason": "Revenue up 55%",
+    "reason_at": "revenue",
+    "when": "Wednesday, after hours"
+   }
+  },
+  {
+   "say": "And number one, FIS. It fell after cutting its profit growth forecast for this year.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "FIS",
+    "company": "FIS",
+    "move_pct": -23.7,
+    "move_at": "fell",
+    "reason": "Cut its profit growth forecast for the year",
+    "reason_at": "cutting",
+    "when": "Wednesday close"
+   }
+  },
+  {
+   "say": "Three of these four moves followed what companies said about the future. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "Three of these four moves were about the future.",
+    "highlight": "future",
+    "highlight_at": "future",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "said"
+   }
+  }
+ ]
+}
