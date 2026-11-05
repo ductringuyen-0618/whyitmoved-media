@@ -22,3 +22,6 @@ Kokoro am_michael. Generate each script sentence separately with the loader in /
 
 ## Gates and publish
 Independent fact-check agent on every number; contact-sheet check; ffprobe length >= 30 s. Then publish exactly as in DAILY.md (copy mp4 to /tmp/media/<YYYY-MM-DD>/<slug>.mp4, pull --rebase, push, Metricool createScheduledPost, LEDGER row kind=cartoon, SendUserMessage + SendUserFile).
+
+## Modern finance world + action kit
+Newer: see ACTIONS.md inside cartoon-kit.tgz and examples/finance-modern (modern city, bank, chip tower, USD stacks, vest crowd) plus examples/action-reel. Use these for hot-topic market shorts instead of the colonial town. New: cry/fall/faint/jump/car/rocket/moon.
