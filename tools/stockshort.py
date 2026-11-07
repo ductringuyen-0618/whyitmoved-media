@@ -52,7 +52,8 @@ SENT_GAP = 0.06      # pause between sentences inside a beat (s)
 # Platform safe zone: TikTok/Shorts cover the top ~210px (tabs), the right ~180px from y≈700 (buttons)
 # and the bottom ~400px (caption, username, nav). Scenes are drawn on a 1080x1920 canvas, then scaled
 # into the safe box: canvas point (540, 800) lands at (SAFE_CX, SAFE_CY), scaled by SAFE_S.
-SAFE_S, SAFE_CX, SAFE_CY = 0.86, 470, 830
+# Centered for TikTok, Reels and Shorts (2026-11-07): content and captions center on x~520, clear of the right button column (x>940).
+SAFE_S, SAFE_CX, SAFE_CY = 0.90, 520, 850
 CACHE = Path.home() / ".cache" / "stockshort"
 KOKORO_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/"
 
@@ -1348,7 +1349,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,{fontname},80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,-1,0,0,0,100,100,1,0,1,8,3,2,40,220,545,1
+Style: Cap,{fontname},80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,-1,0,0,0,100,100,1,0,1,8,3,2,60,100,545,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
