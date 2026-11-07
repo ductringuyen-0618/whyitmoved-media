@@ -1,0 +1,164 @@
+{
+ "slug": "WEEKLY-2026-11-06",
+ "chip": "THIS WEEK",
+ "topic": "Top 5 moves",
+ "date_label": "Week of Nov 2",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": false,
+ "title": "The 5 Biggest Tech Stock Moves This Week #shorts",
+ "description": "Five tech stocks moved 26% to 35% in a single day this week, counted down from #5 to #1, each with the reason behind it.",
+ "hashtags": [
+  "stockmarket",
+  "techstocks",
+  "aistocks",
+  "investing",
+  "weeklyrecap",
+  "shorts"
+ ],
+ "keywords": [
+  "biggest",
+  "twenty-six",
+  "thirty",
+  "thirty-one",
+  "thirty-five",
+  "fifty-five",
+  "sixty",
+  "twenty-nine"
+ ],
+ "tape": [
+  "5 moves, counted down",
+  "Daily closing moves",
+  "Wednesday to Friday",
+  "Educational only"
+ ],
+ "sources": [
+  {
+   "title": "StockTitan, Stock Market Today, Nov 4 2026",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026"
+  },
+  {
+   "title": "Duolingo is up 11% after hours as its user growth speeds up again (24/7 Wall St, Nov 4 2026)",
+   "url": "https://247wallst.com/investing/2026/11/04/duolingo-is-up-11-after-hours-as-its-user-growth-speeds-up-again"
+  },
+  {
+   "title": "Amdocs shares crash 45% as T-Mobile dispute triggers bleak 2027 forecast (Ynet)",
+   "url": "https://www.ynetnews.com/business/article/hymvxdu6mx"
+  },
+  {
+   "title": "Kyndryl shares surge 30% on hyperscaler-related revenue growth (SiliconANGLE, Nov 4 2026)",
+   "url": "https://siliconangle.com/2026/11/04/kyndryl-shares-surge-30-on-hyperscaler-related-revenue-growth/"
+  },
+  {
+   "title": "Closing Look, Thursday Nov 5 2026 (CappNotes)",
+   "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-5"
+  },
+  {
+   "title": "AppLovin Q3 2026 earnings: revenue up 55% (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/applovin-q3-2026-earnings-revenue-up-55-percent-buyback-raised"
+  },
+  {
+   "title": "JFrog Q3 2026 results, SEC Form 8-K exhibit",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001800667/000119312526449797/frog-ex99_1.htm"
+  },
+  {
+   "title": "StockTitan, Stock Market Today, Nov 6 2026",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-6-2026"
+  }
+ ],
+ "beats": [
+  {
+   "say": "Five tech stocks each moved more than twenty-five percent in a single day this week. Here's the countdown, from five to one.",
+   "visual": {
+    "type": "question",
+    "kicker": "Week of Nov 2",
+    "big": "5 tech stocks. 25%+ in one day.",
+    "highlight": "25%+",
+    "sub": "counted down",
+    "sub_at": "countdown"
+   }
+  },
+  {
+   "say": "Number five. Duolingo jumped twenty-six percent on Wednesday. Its daily users grew twenty-nine percent, faster than the quarter before.",
+   "visual": {
+    "type": "rank",
+    "rank": 5,
+    "ticker": "DUOL",
+    "company": "Duolingo",
+    "move_pct": 26.0,
+    "move_at": "jumped",
+    "reason": "Daily users +29%, faster than last quarter",
+    "reason_at": "daily",
+    "when": "Wednesday"
+   }
+  },
+  {
+   "say": "Number four. Amdocs fell thirty percent, also on Wednesday. It forecast shrinking revenue next year, as a dispute with T-Mobile, a major customer, escalated.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "DOX",
+    "company": "Amdocs",
+    "move_pct": -30.1,
+    "move_at": "fell",
+    "reason": "Forecast: revenue down 14-18% next year",
+    "reason_at": "forecast",
+    "when": "Wednesday"
+   }
+  },
+  {
+   "say": "Number three. Kyndryl jumped thirty percent, again on Wednesday. It beat earnings estimates, and its revenue tied to cloud providers grew twenty-seven percent.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "KD",
+    "company": "Kyndryl",
+    "move_pct": 30.1,
+    "move_at": "jumped",
+    "reason": "Earnings beat, cloud-linked revenue +27%",
+    "reason_at": "beat",
+    "when": "Wednesday"
+   }
+  },
+  {
+   "say": "Number two. AppLovin jumped thirty-one percent on Thursday, even as the Nasdaq fell more than five percent. Its revenue grew fifty-five percent and beat its own forecast.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "APP",
+    "company": "AppLovin",
+    "move_pct": 31.0,
+    "move_at": "jumped",
+    "reason": "Revenue +55%, above its own forecast",
+    "reason_at": "revenue",
+    "when": "Thursday"
+   }
+  },
+  {
+   "say": "And number one. Software company JFrog soared thirty-five percent on Friday. Its cloud revenue grew sixty percent, and total revenue grew thirty-one percent.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "FROG",
+    "company": "JFrog",
+    "move_pct": 35.3,
+    "move_at": "soared",
+    "reason": "Cloud revenue +60%, total revenue +31%",
+    "reason_at": "cloud",
+    "when": "Friday"
+   }
+  },
+  {
+   "say": "Five stocks, five big surprises. Follow for one market move explained every day.",
+   "visual": {
+    "type": "outro",
+    "big": "Every big move. Every weekday.",
+    "highlight": "Every weekday",
+    "highlight_at": "surprises",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "Follow"
+   }
+  }
+ ]
+}
