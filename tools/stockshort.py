@@ -1048,11 +1048,141 @@ def scene_qa(img, v, t, spec, cues):
         y += ha + 36
 
 
+
+# ---- format-creator additions (2026-11-08): "balance" (tug of war) and "split" (donut breakdown) ----
+def scene_balance(img, v, t, spec, cues):
+    """TUG OF WAR: items pulling the stock up (left pan) vs down (right pan). The beam tips as each item is
+    spoken; heavier = bigger 'weight' (1-3, an editorial size, never a number on screen). Ends on a 'net' line."""
+    import math
+    d = ImageDraw.Draw(img)
+    title = v.get("title", "Two forces, one stock")
+    ctext(d, 405, title.upper(), fit_font(d, title.upper(), "bold", 56, 940), C["muted"] + (A(t / 0.25),))
+    sides = (("up", v.get("up", [])[:3], 300), ("down", v.get("down", [])[:3], 780))
+    n_all = sum(len(x[1]) for x in sides)
+    plan, k = [], 0
+    for key, items, cx in sides:
+        for it in items:
+            tk = cues.at(it.get("at"), cues.spread(k, n_all, 0.08, 0.7))
+            plan.append((key, it, tk, cx))
+            k += 1
+    net = 0.0
+    for key, it, tk, cx in plan:
+        w = max(1, min(3, int(it.get("weight", 1))))
+        net += (w if key == "down" else -w) * ease((t - tk) / 0.55)
+    ang = math.radians(10 * math.tanh(net * 0.7))
+    px, py, L = 540, 585, 240
+    ends = {"up": (px - L * math.cos(ang), py - L * math.sin(ang)), "down": (px + L * math.cos(ang), py + L * math.sin(ang))}
+    d.rounded_rectangle((px - 8, py, px + 8, 1095), radius=8, fill=(70, 84, 120, 255))
+    d.rounded_rectangle((px - 110, 1090, px + 110, 1112), radius=11, fill=(70, 84, 120, 255))
+    d.line([ends["up"], ends["down"]], fill=(205, 214, 232, 255), width=14)
+    for e in ends.values():
+        d.ellipse((e[0] - 10, e[1] - 10, e[0] + 10, e[1] + 10), fill=(205, 214, 232, 255))
+    d.ellipse((px - 20, py - 20, px + 20, py + 20), fill=C["accent"] + (255,))
+    for key, label in (("up", "PULLING UP"), ("down", "PULLING DOWN")):
+        cx = 300 if key == "up" else 780
+        ctext(d, 478, label, font("bold", 38), C[key] + (A(t / 0.3),), x=cx)
+    for key, items, cx in sides:
+        ex, ey = ends[key]
+        y = ey + 50
+        d.line([(ex, ey), (ex, y)], fill=(120, 132, 160, 255), width=5)
+        for it in items:
+            tk = [x[2] for x in plan if x[1] is it][0]
+            if t < tk:
+                continue
+            p = ease((t - tk) / 0.3)
+            w = max(1, min(3, int(it.get("weight", 1))))
+            h = 112 + 22 * (w - 1)
+            yy = y + (1 - p) * -70
+            col = C[key]
+            card(img, (ex - 220, yy, ex + 220, yy + h), radius=26, fill=col + (int(46 * p),))
+            d = ImageDraw.Draw(img)
+            d.rounded_rectangle((ex - 220, yy, ex + 220, yy + h), radius=26, outline=col + (A(p),), width=4)
+            ft = fit_font(d, it["text"], "bold", 42, 400, 28)
+            if it.get("sub"):
+                d.text((ex, yy + h * 0.38), it["text"], font=ft, fill=C["text"] + (A(p),), anchor="mm")
+                fs = fit_font(d, it["sub"], "medium", 32, 400, 24)
+                d.text((ex, yy + h * 0.72), it["sub"], font=fs, fill=C["muted"] + (A(p),), anchor="mm")
+            else:
+                d.text((ex, yy + h / 2), it["text"], font=ft, fill=C["text"] + (A(p),), anchor="mm")
+            y += h + 14
+        if y > ey + 50:
+            d.rounded_rectangle((ex - 230, y - 6, ex + 230, y + 8), radius=7, fill=(205, 214, 232, 255))
+    if v.get("net"):
+        tn = cues.at(v.get("net_at"), cues.dur * 0.8)
+        if t >= tn:
+            q = ease((t - tn) / 0.3)
+            col = colr(v.get("net_color"), "text")
+            for i, line in enumerate(wrap(d, v["net"], font("bold", 50), 940)[:2]):
+                ctext(d, 1165 + i * 58, line, font("bold", 50), col + (A(q),))
+
+
+SPLIT_COLORS = [(96, 165, 250), (167, 139, 250), (45, 212, 191), (148, 163, 184)]
+
+
+def scene_split(img, v, t, spec, cues):
+    """BREAKDOWN: a donut split into parts (revenue mix, where a raise comes from). Slices sweep in as each
+    part is spoken; the newest slice is lifted and its 'pill' (a change such as +89%) shows in the hole."""
+    d = ImageDraw.Draw(img)
+    title = v.get("title", "Where it came from")
+    ctext(d, 405, title.upper(), fit_font(d, title.upper(), "bold", 56, 940), C["muted"] + (A(t / 0.25),))
+    items = v["items"][:4]
+    n = len(items)
+    tot = sum(float(i["value"]) for i in items) or 1.0
+    tks = [cues.at(it.get("at"), cues.spread(k, n, 0.05, 0.7)) for k, it in enumerate(items)]
+    cx, cy, R, r = 540, 715, 240, 148
+    SS = 2
+    half = (R + 24) * SS
+    lay = Image.new("RGBA", (half * 2, half * 2), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(lay)
+    ld.pieslice((half - (R + 0) * SS, half - (R + 0) * SS, half + (R + 0) * SS, half + (R + 0) * SS), 0, 360, fill=(30, 40, 68, 255))
+    a0 = -90.0
+    acts = []
+    for k, it in enumerate(items):
+        ext = 360.0 * float(it["value"]) / tot
+        prog = ease((t - tks[k]) / 0.55)
+        nxt = ease((t - tks[k + 1]) / 0.3) if k + 1 < n else 0.0
+        act = ease((t - tks[k]) / 0.3) * (1 - nxt)
+        acts.append(act)
+        if prog > 0:
+            rr = (R + 16 * act) * SS
+            col = colr(it.get("color"), "text") if it.get("color") in ("up", "down") else SPLIT_COLORS[k % 4]
+            e = a0 + ext * prog - 0.7
+            if e > a0 + 0.7:
+                ld.pieslice((half - rr, half - rr, half + rr, half + rr), a0 + 0.7, e, fill=col + (255,))
+        a0 += ext
+    ld.ellipse((half - r * SS, half - r * SS, half + r * SS, half + r * SS), fill=(0, 0, 0, 0))
+    lay = lay.resize((half * 2 // SS, half * 2 // SS), Image.LANCZOS)
+    img.alpha_composite(lay, (cx - half // SS, cy - half // SS))
+    d = ImageDraw.Draw(img)
+    shown = [k for k in range(n) if t >= tks[k]]
+    if shown:
+        k = shown[-1]
+        it = items[k]
+        p = ease((t - tks[k]) / 0.3)
+        big = it.get("pill") or it.get("display", "")
+        pc = colr(it.get("pill_color"), "text") if it.get("pill") else C["text"]
+        ctext(d, cy - 18, big, fit_font(d, big, "bold", 92, 270, 48), pc + (A(p),), x=cx)
+        if it.get("pill_sub"):
+            ctext(d, cy + 52, it["pill_sub"], font("medium", 32), C["muted"] + (A(p),), x=cx)
+    for k, it in enumerate(items):
+        if t < tks[k]:
+            continue
+        p = ease((t - tks[k]) / 0.3)
+        y = 1015 + k * 72
+        col = colr(it.get("color"), "text") if it.get("color") in ("up", "down") else SPLIT_COLORS[k % 4]
+        d.ellipse((120, y - 17, 154, y + 17), fill=col + (A(p),))
+        on = acts[k]
+        tc = mix(C["muted"], C["text"], on)
+        d.text((180, y), it["label"], font=font("bold", 44), fill=tc + (A(p),), anchor="lm")
+        d.text((960, y), it.get("display", ""), font=font("bold", 48), fill=tc + (A(p),), anchor="rm")
+
+
 SCENES = {"hook": scene_hook, "headline": scene_headline, "stat": scene_stat, "bars": scene_bars, "compare": scene_compare,
           "line": scene_line, "bullets": scene_bullets, "scorecard": scene_scorecard,
           "text": scene_text, "outro": scene_outro, "question": scene_question, "rank": scene_rank,
           "chain": scene_chain, "beatmiss": scene_beatmiss, "timeline": scene_timeline, "peers": scene_peers,
-          "mythfact": scene_mythfact, "quiz": scene_quiz, "poll": scene_poll, "decoder": scene_decoder, "shift": scene_shift, "receipts": scene_receipts, "qa": scene_qa}
+          "mythfact": scene_mythfact, "quiz": scene_quiz, "poll": scene_poll, "decoder": scene_decoder, "shift": scene_shift, "receipts": scene_receipts, "qa": scene_qa,
+          "balance": scene_balance, "split": scene_split}
 
 
 # ================================================================== frame furniture
@@ -1297,6 +1427,21 @@ def collect_events(beats: list[dict]) -> list[tuple[float, str]]:
                 tk = cues.at(it.get("at"), cues.spread(k, len(v["items"][:3]), 0.05, 0.7))
                 ev.append((st + tk, "pop"))
                 ev.append((st + tk + 0.3, "stamp"))
+            continue
+        if kind == "balance":
+            allit = [x for x in v.get("up", [])[:3]] + [x for x in v.get("down", [])[:3]]
+            for k, it in enumerate(allit):
+                ev.append((st + cues.at(it.get("at"), cues.spread(k, len(allit), 0.08, 0.7)), "pop"))
+            if v.get("net"):
+                ev.append((st + cues.at(v.get("net_at"), cues.dur * 0.8), "stamp"))
+            continue
+        if kind == "split":
+            its = v["items"][:4]
+            for k, it in enumerate(its):
+                tk = cues.at(it.get("at"), cues.spread(k, len(its), 0.05, 0.7))
+                ev.append((st + tk, "pop"))
+                if it.get("pill"):
+                    ev.append((st + tk + 0.25, "stamp"))
             continue
         if kind == "decoder":
             for k, it in enumerate(v["items"][:3]):
