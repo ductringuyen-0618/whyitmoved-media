@@ -1,0 +1,148 @@
+{
+  "slug": "EXPLAINER-priced-in",
+  "chip": "EXPLAINED",
+  "topic": "Priced in",
+  "date_label": "Why It Moved 101",
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": false,
+  "title": "What Does \"Priced In\" Mean? A Simple Example #shorts",
+  "description": "'Priced in' explained in 30 seconds, using Shopify's November 3 report as the example. Revenue grew 32%, but order volume landed about $1 billion under analyst estimates and shares fell more than 10% at one point.",
+  "hashtags": [
+    "pricedin",
+    "investing101",
+    "stockmarket",
+    "shopify",
+    "personalfinance",
+    "shorts"
+  ],
+  "keywords": [
+    "priced",
+    "expect",
+    "twenty-eight",
+    "miss",
+    "thirty-two",
+    "billion",
+    "estimates",
+    "surprises",
+    "beats"
+  ],
+  "tape": [
+    "Priced in = already expected",
+    "Stocks move on surprises",
+    "Example: SHOP revenue +32%",
+    "Order volume ~$1B under estimates"
+  ],
+  "sources": [
+    {
+      "title": "Shopify Sustains Rapid Growth with Revenue Up 32% and Free Cash Flow Margin of 22% (GlobeNewswire, Nov 3 2026)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/03/3394077/0/en/shopify-sustains-rapid-growth-with-revenue-up-32-and-free-cash-flow-margin-of-22.html"
+    },
+    {
+      "title": "Why Shopify Stock Dove Today (Motley Fool, Nov 3 2026)",
+      "url": "https://www.fool.com/investing/2026/11/03/why-shopify-stock-dove-today/"
+    },
+    {
+      "title": "Shopify Plunges as GMV and Subscription Revenue Miss Estimates (24/7 Wall St, Nov 3 2026)",
+      "url": "https://247wallst.com/investing/2026/11/03/shopify-plunges-17-as-gmv-and-subscription-revenue-miss-estimates-wix-drops-3-etsy-dips/"
+    }
+  ],
+  "beats": [
+    {
+      "say": "Why can a stock fall on good news? It's called priced in.",
+      "visual": {
+        "type": "question",
+        "kicker": "Explained in 30 seconds",
+        "big": "Good news. Stock still fell.",
+        "highlight": "still fell",
+        "sub": "What does \"priced in\" mean?",
+        "sub_at": "called"
+      }
+    },
+    {
+      "say": "Say investors expect thirty percent growth, but get twenty-eight. Strong growth, yet a miss. Priced in means the good news was already expected.",
+      "visual": {
+        "type": "bars",
+        "title": "Growth: expected vs reported (example)",
+        "items": [
+          {
+            "label": "Investors expect",
+            "value": 30,
+            "display": "30%",
+            "color": "text",
+            "at": "thirty"
+          },
+          {
+            "label": "Company reports",
+            "value": 28,
+            "display": "28%",
+            "color": "down",
+            "at": "twenty-eight"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Real example. Shopify's sales rose thirty-two percent.",
+      "visual": {
+        "type": "headline",
+        "kicker": "Real example",
+        "source": "GlobeNewswire",
+        "date": "Nov 3, 2026",
+        "headline": "Shopify Sustains Rapid Growth with Revenue Up 32% and Free Cash Flow Margin of 22%",
+        "highlight": "Revenue Up 32%",
+        "highlight_at": "sales"
+      }
+    },
+    {
+      "say": "But order volume landed about a billion dollars under analyst estimates, and shares fell more than ten percent at one point.",
+      "visual": {
+        "type": "scorecard",
+        "title": "Shopify, Nov 3",
+        "items": [
+          {
+            "label": "Order volume",
+            "detail": "about $1B under estimates",
+            "verdict": "bad",
+            "at": "order"
+          },
+          {
+            "label": "Shares",
+            "detail": "down 10%+ at one point",
+            "verdict": "bad",
+            "at": "shares"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Stocks trade on expectations. Prices move on surprises.",
+      "visual": {
+        "type": "bullets",
+        "title": "Why it matters",
+        "items": [
+          {
+            "text": "Prices reflect expectations",
+            "at": "expectations"
+          },
+          {
+            "text": "Surprises move prices",
+            "at": "surprises"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Good news helps most when it beats what's expected. Follow for one market move explained every day.",
+      "visual": {
+        "type": "outro",
+        "big": "Good news helps most when it beats expectations.",
+        "highlight": "beats expectations",
+        "highlight_at": "beats",
+        "cta": "Follow @whyitmoved",
+        "cta_sub": "A new stock move explained daily",
+        "cta_at": "Follow"
+      }
+    }
+  ]
+}
