@@ -1,0 +1,159 @@
+{
+ "slug": "MOVERS-2026-11-09",
+ "chip": "BIG MOVERS",
+ "move_pct": 23.4,
+ "topic": "Friday movers",
+ "date_label": "Nov 6",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "title": "5 Big Friday Stock Moves: #1 IonQ +23% #shorts",
+ "description": "IonQ jumped 23% on Friday after raising its full-year revenue forecast. Here are five of Friday's big moves among well-known companies, each with the reason it moved.",
+ "hashtags": [
+  "IonQ",
+  "stockmarket",
+  "stocks",
+  "techstocks",
+  "earnings",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "IonQ",
+  "revenue",
+  "Atlassian",
+  "Axon",
+  "IREN",
+  "nearly",
+  "DraftKings",
+  "profit",
+  "raising",
+  "forecast"
+ ],
+ "tape": [
+  "FRIDAY NOV 6 CLOSE",
+  "WHY IT MOVED"
+ ],
+ "sources": [
+  {
+   "title": "Chip stocks bounced back, Stock Market Today Nov 6 2026 (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-6-2026"
+  },
+  {
+   "title": "Stock Market Movers: Biggest Gainers and Losers on 6 November 2026 (Insider Monkey)",
+   "url": "https://www.insidermonkey.com/news/stock-market-movers-biggest-gainers-and-losers-on-6-november-2026-1862660/?singlepage=1"
+  },
+  {
+   "title": "IonQ Form 8-K, Q3 2026 results (SEC)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001824920/000119312526449779/ionq-ex99_1.htm"
+  },
+  {
+   "title": "IREN Form 8-K, Q1 FY27 results (SEC)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001878848/000187884826000065/irenreportsq1-fy27result.htm"
+  },
+  {
+   "title": "DraftKings misses Q3 revenue estimates, shares slide (Gambling.com)",
+   "url": "https://www.gambling.com/news/draftkings-misses-quarter-3-revenue-estimates-shares-slide"
+  },
+  {
+   "title": "Axon sinks 17% on revenue miss, guidance cut (TIKR, Nov 6 2026)",
+   "url": "https://www.tikr.com/blog/axon-sinks-17-on-revenue-miss-guidance-cut-and-1-2-billion-skydio-bet-on-millions-of-drones"
+  },
+  {
+   "title": "Atlassian shares fall 17% as slower subscription growth forecast overshadows earnings beat (SiliconANGLE)",
+   "url": "https://siliconangle.com/2026/11/05/atlassian-shares-fall-17-as-slower-subscription-growth-forecast-overshadows-earnings-beat/"
+  }
+ ],
+ "beats": [
+  {
+   "say": "What lifted IonQ twenty three percent on Friday? A raised forecast. Now, four more big movers.",
+   "visual": {
+    "type": "hook",
+    "move_pct": 23.4,
+    "label": "Friday close: IonQ",
+    "question": "What lifted IonQ 23% in one day? A raised forecast."
+   }
+  },
+  {
+   "say": "Number five. Atlassian fell sixteen percent, after forecasting slower subscription growth.",
+   "visual": {
+    "type": "rank",
+    "rank": 5,
+    "ticker": "TEAM",
+    "company": "Atlassian",
+    "move_pct": -16.2,
+    "move_at": "fell",
+    "reason": "Forecast slower subscription growth",
+    "reason_at": "forecasting",
+    "when": "Friday close"
+   }
+  },
+  {
+   "say": "Number four. Axon fell eighteen percent, after cutting its growth forecast.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "AXON",
+    "company": "Axon",
+    "move_pct": -18.2,
+    "move_at": "fell",
+    "reason": "Cut its growth forecast",
+    "reason_at": "cutting",
+    "when": "Friday close"
+   }
+  },
+  {
+   "say": "Number three. IREN rose twenty percent, as its AI cloud revenue nearly tripled from the prior quarter.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "IREN",
+    "company": "IREN",
+    "move_pct": 20.0,
+    "move_at": "rose",
+    "reason": "AI cloud revenue nearly tripled from last quarter",
+    "reason_at": "nearly",
+    "when": "Friday close"
+   }
+  },
+  {
+   "say": "Number two. DraftKings fell twenty one percent, after cutting its profit forecast to fund prediction products.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "DKNG",
+    "company": "DraftKings",
+    "move_pct": -21.3,
+    "move_at": "fell",
+    "reason": "Cut profit forecast to fund prediction products",
+    "reason_at": "cutting",
+    "when": "Friday close"
+   }
+  },
+  {
+   "say": "And number one, IonQ, up twenty three percent, after raising its full year revenue forecast.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "IONQ",
+    "company": "IonQ",
+    "move_pct": 23.4,
+    "move_at": "up",
+    "reason": "Raised its full year revenue forecast",
+    "reason_at": "raising",
+    "when": "Friday close"
+   }
+  },
+  {
+   "say": "Four of the five moved on what companies said comes next. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "Four of five moved on the forecast.",
+    "highlight": "forecast",
+    "highlight_at": "next",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}
