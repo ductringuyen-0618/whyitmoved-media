@@ -1,0 +1,140 @@
+{
+ "slug": "MOVERS-2026-11-10",
+ "chip": "BIG MOVERS",
+ "move_pct": 26.1,
+ "topic": "Monday movers",
+ "date_label": "Nov 9",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "title": "Fervo +26%, AMD +13%: 4 Stocks That Jumped Monday #shorts",
+ "description": "Four well-known stocks rose 10% or more on Monday, led by Fervo Energy at 26%. Each one comes with the reason it moved.",
+ "hashtags": [
+  "Fervo",
+  "AMD",
+  "stockmarket",
+  "stocks",
+  "techstocks",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "Google",
+  "ten",
+  "NRG",
+  "upgrade",
+  "QXO",
+  "seventy",
+  "quarterly",
+  "own",
+  "geothermal"
+ ],
+ "tape": [
+  "MONDAY NOV 9 CLOSE",
+  "WHY IT MOVED"
+ ],
+ "sources": [
+  {
+   "title": "Stock Market Today, Nov 9 2026 closing moves (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-9-2026"
+  },
+  {
+   "title": "Fervo now has $12B in orders for its geothermal power tech (TechCrunch, Nov 9 2026)",
+   "url": "https://techcrunch.com/2026/11/09/fervo-now-has-12b-in-orders-for-its-geothermal-power-tech/"
+  },
+  {
+   "title": "QXO Stock Surges on Strong Q3 2026 Preliminary Sales (Benzinga via KuCoin)",
+   "url": "https://www.kucoin.com/news/flash/qxo-stock-surges-18-77-on-strong-q3-2026-preliminary-sales"
+  },
+  {
+   "title": "Stock Market Today, Nov. 9: AMD Jumps on Oppenheimer Upgrade (Motley Fool)",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-amd-jumps-on-oppenheimer-upgrade-and-google-cloud-chip-selection/"
+  },
+  {
+   "title": "NRG Energy to Sell Natural Gas Plants to LS Power for $4 Billion (American Public Power Association)",
+   "url": "https://www.publicpower.org/periodical/article/nrg-energy-sell-natural-gas-plants-ls-power-4-billion"
+  },
+  {
+   "title": "AMD rises on Oppenheimer upgrade, $600 target (TradingKey, Nov 10 2026)",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262297721-amd-stock-erases-17-percent-crash-515-resistance-oppenheimer-upgrade-november-10-2026-tradingkey"
+  }
+ ],
+ "beats": [
+  {
+   "say": "Four well-known stocks jumped ten percent or more on Monday. The biggest of them: a geothermal company with a Google power deal.",
+   "visual": {
+    "type": "hook",
+    "move_pct": 26.1,
+    "label": "Monday close: biggest of four",
+    "question": "Four well-known stocks jumped 10%+ on Monday."
+   }
+  },
+  {
+   "say": "Number four. NRG Energy rose ten percent, after agreeing to sell six gas power plants for four billion dollars.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "NRG",
+    "company": "NRG Energy",
+    "move_pct": 10.5,
+    "move_at": "rose",
+    "reason": "Agreed to sell six gas plants for $4B",
+    "reason_at": "agreeing",
+    "when": "Monday close"
+   }
+  },
+  {
+   "say": "Number three. AMD rose thirteen percent, after an Oppenheimer upgrade and a Google Cloud chip pick.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "AMD",
+    "company": "",
+    "move_pct": 13.3,
+    "move_at": "rose",
+    "reason": "Oppenheimer upgrade; Google chip pick",
+    "reason_at": "upgrade",
+    "when": "Monday close"
+   }
+  },
+  {
+   "say": "Number two. QXO rose nineteen percent, after preliminary third quarter sales jumped seventy nine percent.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "QXO",
+    "company": "",
+    "move_pct": 19.1,
+    "move_at": "rose",
+    "reason": "Preliminary sales up 79%",
+    "reason_at": "preliminary",
+    "when": "Monday close"
+   }
+  },
+  {
+   "say": "And number one, Fervo Energy, up twenty six percent, after its quarterly report showed contracted revenue of eleven point nine billion dollars.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "FRVO",
+    "company": "Fervo Energy",
+    "move_pct": 26.1,
+    "move_at": "up",
+    "reason": "Contracted revenue hit $11.9B",
+    "reason_at": "quarterly",
+    "when": "Monday close"
+   }
+  },
+  {
+   "say": "Most of these moved on the company's own news. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "Most of these moved on the company's own news.",
+    "highlight": "own",
+    "highlight_at": "own",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}
