@@ -1,0 +1,132 @@
+{
+ "slug": "MOVERS-2026-11-11",
+ "chip": "WEDNESDAY",
+ "move_pct": 15.3,
+ "topic": "Wednesday movers",
+ "date_label": "Nov 11",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "title": "CoreWeave +15%, Nvidia -5.5%: 4 Stocks on the Move #shorts",
+ "description": "CoreWeave raised its forecast and is up before the open Wednesday. Nebius rose alongside it. Take-Two rose Tuesday on GTA VI preorders, and Nvidia fell after its board hired a firm to investigate its CEO.",
+ "hashtags": [
+  "CoreWeave",
+  "Nvidia",
+  "stockmarket",
+  "stocks",
+  "aistocks",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "premarket",
+  "forecast",
+  "rival",
+  "Take-Two",
+  "preorders",
+  "investigation",
+  "Nvidia",
+  "Nebius",
+  "CoreWeave"
+ ],
+ "tape": [
+  "WED NOV 11",
+  "WHY IT MOVED"
+ ],
+ "sources": [
+  {
+   "title": "Stock Market Today, Nov 10 2026 closing moves (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-10-2026"
+  },
+  {
+   "title": "Premarket movers, Nov 11 2026 (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-11-2026"
+  },
+  {
+   "title": "Morning Brief Nov 11, 2026 (Current Logic)",
+   "url": "https://currentlogic.substack.com/p/the-morning-brief-november-11-2026"
+  },
+  {
+   "title": "Big Moves: November 10, 2026",
+   "url": "https://bigmoves.substack.com/p/big-moves-november-10-2026"
+  }
+ ],
+ "beats": [
+  {
+   "say": "Why is CoreWeave up fifteen percent before the open? It raised its revenue forecast. Three other stocks moved too.",
+   "visual": {
+    "type": "hook",
+    "move_pct": 15.3,
+    "label": "CoreWeave, Wednesday premarket",
+    "question": "Why is CoreWeave up 15% before the open?"
+   }
+  },
+  {
+   "say": "Number four. Nvidia fell five and a half percent on Tuesday, after its board hired a law firm to investigate its CEO.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "NVDA",
+    "company": "Nvidia",
+    "move_pct": -5.5,
+    "move_at": "fell",
+    "reason": "Board hired a firm to probe its CEO",
+    "reason_at": "board",
+    "when": "Tuesday close"
+   }
+  },
+  {
+   "say": "Number three. Take-Two rose eight percent on Tuesday, after huge Grand Theft Auto six preorders.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "TTWO",
+    "company": "Take-Two",
+    "move_pct": 8.3,
+    "move_at": "rose",
+    "reason": "Huge GTA VI preorders",
+    "reason_at": "huge",
+    "when": "Tuesday close"
+   }
+  },
+  {
+   "say": "Number two. Nebius is up thirteen percent premarket, rising alongside its rival CoreWeave.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "NBIS",
+    "company": "Nebius",
+    "move_pct": 13.1,
+    "move_at": "up",
+    "reason": "Rose alongside rival CoreWeave",
+    "reason_at": "rising",
+    "when": "Wednesday premarket"
+   }
+  },
+  {
+   "say": "And number one, CoreWeave, up fifteen percent premarket, after it raised its twenty twenty six revenue forecast.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "CRWV",
+    "company": "CoreWeave",
+    "move_pct": 15.3,
+    "move_at": "up",
+    "reason": "Raised 2026 revenue forecast",
+    "reason_at": "raised",
+    "when": "Wednesday premarket"
+   }
+  },
+  {
+   "say": "A rival's news can lift a stock with no news of its own. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "A rival's news can lift a stock with no news of its own.",
+    "highlight": "rival's",
+    "highlight_at": "rival's",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}
