@@ -1,0 +1,157 @@
+{
+ "slug": "MOVERS-2026-11-13",
+ "chip": "THURSDAY",
+ "move_pct": -24.3,
+ "topic": "Daily movers",
+ "date_label": "Nov 13",
+ "brand": "@whyitmoved",
+ "voice": "am_michael",
+ "loop": true,
+ "title": "Corteva -24%, Nebius -17%, Cerebras +16%: 5 Movers #shorts",
+ "description": "Corteva fell 24% Thursday after cutting its forecast on weak Brazil demand. Nebius, Super Micro and Strategy also fell, while Cerebras is up premarket Friday after raising its forecast.",
+ "hashtags": [
+  "Corteva",
+  "Nebius",
+  "Cerebras",
+  "stockmarket",
+  "stocks",
+  "whyitmoved"
+ ],
+ "keywords": [
+  "Strategy",
+  "smuggling",
+  "Cerebras",
+  "Nebius",
+  "February",
+  "Corteva",
+  "Brazil",
+  "forecast"
+ ],
+ "tape": [
+  "FRI NOV 13",
+  "WHY IT MOVED"
+ ],
+ "sources": [
+  {
+   "title": "Stock Market Today, Nov 12 2026 closing moves (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026"
+  },
+  {
+   "title": "Corteva shares plunge as CEO warns Brazil slump will drag on (MarketScreener)",
+   "url": "https://www.marketscreener.com/news/corteva-shares-plunge-as-ceo-warns-brazil-slump-will-drag-on-ce785ed8d08df22c"
+  },
+  {
+   "title": "Nebius Q3 2026 earnings (StockAnalysis)",
+   "url": "https://stockanalysis.com/news/nebius-q3-2026-earnings/"
+  },
+  {
+   "title": "Super Micro vs CoreWeave after Huang exit (24/7 Wall St, Nov 13 2026)",
+   "url": "https://247wallst.com/investing/2026/11/13/heres-whos-getting-dragged-down-further-as-huang-exits-coreweave-vs-super-micro-computer/"
+  },
+  {
+   "title": "Premarket movers, Nov 13 2026 (TradingKey)",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262304609-nvda-nvidia-msft-us-ppi-tradingkey"
+  },
+  {
+   "title": "Premarket movers: Modine surges; Cerebras jumps (Investing.com)",
+   "url": "https://in.investing.com/news/stock-market-news/premarket-movers-modine-surges-cerebras-jumps-on-microsoft-deal-5702545"
+  },
+  {
+   "title": "Stock market today Thursday Nov 12 2026 (Yahoo Finance)",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-12-sp-500-nasdaq-dow-nvidia-invest-110027430.html"
+  }
+ ],
+ "beats": [
+  {
+   "say": "Which stock fell hardest on Thursday? Corteva, down twenty four percent, after cutting its forecast. Here are five big movers, ranked by size.",
+   "visual": {
+    "type": "hook",
+    "move_pct": -24.3,
+    "label": "Thursday close",
+    "question": "Which stock fell hardest Thursday?"
+   }
+  },
+  {
+   "say": "Number five. Strategy fell six and a half percent on Thursday, after MSCI said it plans to remove the stock from an index.",
+   "visual": {
+    "type": "rank",
+    "rank": 5,
+    "ticker": "MSTR",
+    "company": "Strategy",
+    "move_pct": -6.5,
+    "move_at": "fell",
+    "reason": "MSCI plans to remove it from an index",
+    "reason_at": "MSCI",
+    "when": "Thursday close"
+   }
+  },
+  {
+   "say": "Number four. Super Micro fell eleven percent on Thursday, after a report that U.S. officials are probing server smuggling.",
+   "visual": {
+    "type": "rank",
+    "rank": 4,
+    "ticker": "SMCI",
+    "company": "Super Micro",
+    "move_pct": -11.3,
+    "move_at": "fell",
+    "reason": "Report of US server-smuggling probe",
+    "reason_at": "report",
+    "when": "Thursday close"
+   }
+  },
+  {
+   "say": "Number three. Cerebras is up sixteen percent premarket on Friday, after raising its revenue forecast.",
+   "visual": {
+    "type": "rank",
+    "rank": 3,
+    "ticker": "CBRS",
+    "company": "Cerebras",
+    "move_pct": 16.0,
+    "move_at": "up",
+    "reason": "Raised its revenue forecast",
+    "reason_at": "raising",
+    "when": "Friday premarket, so far"
+   }
+  },
+  {
+   "say": "Number two. Nebius fell nearly seventeen percent on Thursday, after reporting results and pushing its seven billion dollar sales goal back to February.",
+   "visual": {
+    "type": "rank",
+    "rank": 2,
+    "ticker": "NBIS",
+    "company": "Nebius",
+    "move_pct": -16.8,
+    "move_at": "fell",
+    "reason": "Pushed $7B sales goal back to Feb.",
+    "reason_at": "pushing",
+    "when": "Thursday close"
+   }
+  },
+  {
+   "say": "And number one. Corteva fell twenty four percent on Thursday, after cutting its forecast on weak demand in Brazil.",
+   "visual": {
+    "type": "rank",
+    "rank": 1,
+    "ticker": "CTVA",
+    "company": "Corteva",
+    "move_pct": -24.3,
+    "move_at": "fell",
+    "reason": "Cut forecast on weak Brazil demand",
+    "reason_at": "cutting",
+    "when": "Thursday close"
+   }
+  },
+  {
+   "say": "Three of these five moved on a goal or forecast. And that's why",
+   "visual": {
+    "type": "outro",
+    "big": "Three of these five moved on a goal or forecast.",
+    "highlight": "forecast",
+    "highlight_at": "forecast",
+    "cta": "Follow @whyitmoved",
+    "cta_sub": "A new stock move explained daily",
+    "cta_at": "that's"
+   }
+  }
+ ]
+}
