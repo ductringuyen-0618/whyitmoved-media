@@ -1,0 +1,159 @@
+{
+  "slug": "WEEKLY-2026-11-13",
+  "chip": "THIS WEEK",
+  "topic": "Top 5 moves",
+  "date_label": "Week of Nov 9",
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": false,
+  "title": "The 5 Biggest Tech Stock Moves This Week #shorts",
+  "description": "Five one-day stock swings in tech, AI and power this week: Fervo, CoreWeave, Nebius, AMD and Cerebras, and what moved each one.",
+  "hashtags": [
+    "stockmarket",
+    "techstocks",
+    "aistocks",
+    "investing",
+    "weeklyrecap",
+    "shorts"
+  ],
+  "keywords": [
+    "eleven",
+    "thirteen",
+    "seventeen",
+    "twenty",
+    "swing",
+    "geothermal"
+  ],
+  "tape": [
+    "FRVO +26.1%",
+    "CRWV +24.7%",
+    "NBIS -16.8%",
+    "AMD +13.3%",
+    "CBRS +11.2%"
+  ],
+  "sources": [
+    {
+      "title": "Stock Market Today, Nov 9 2026 closing moves (StockTitan)",
+      "url": "https://stocktitan.net/articles/stock-market-today-live-november-9-2026"
+    },
+    {
+      "title": "Stock Market Today, Nov 11 2026 closing moves (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-11-2026"
+    },
+    {
+      "title": "Stock Market Today, Nov 12 2026 closing moves (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026"
+    },
+    {
+      "title": "Stock Market Today, Nov 13 2026 closing moves (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-13-2026"
+    },
+    {
+      "title": "Stock Market Today, Nov. 9: AMD Jumps on Oppenheimer Upgrade and Google Cloud Chip Selection (Motley Fool)",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-amd-jumps-on-oppenheimer-upgrade-and-google-cloud-chip-selection/"
+    },
+    {
+      "title": "Fervo now has $12B in orders for its geothermal power tech (TechCrunch, Nov 9 2026)",
+      "url": "https://techcrunch.com/2026/11/09/fervo-now-has-12b-in-orders-for-its-geothermal-power-tech/"
+    },
+    {
+      "title": "Stock Market Today, Nov. 12: Nebius Group Sinks Nearly 17% After Lowering 2026 Outlook (Motley Fool)",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/12/stock-market-today-nov-12-nebius-group-sinks-nearly-17-after-lowering-2026-outlook/"
+    }
+  ],
+  "beats": [
+    {
+      "say": "Which stock swung hardest in one day this week? Five tech and power names, lined up.",
+      "visual": {
+        "type": "question",
+        "kicker": "Week of Nov 9",
+        "big": "Which stock swung hardest this week?",
+        "highlight": "swung hardest",
+        "sub": "five tech and power names",
+        "sub_at": "Five"
+      }
+    },
+    {
+      "say": "Number five. Cerebras jumped eleven percent Friday after record revenue and a higher full-year forecast. Sales grew fifty-five percent, though it still lost money.",
+      "visual": {
+        "type": "rank",
+        "rank": 5,
+        "ticker": "CBRS",
+        "company": "Cerebras",
+        "move_pct": 11.2,
+        "move_at": "jumped",
+        "reason": "Record revenue, raised its 2026 outlook",
+        "reason_at": "record",
+        "when": "Friday"
+      }
+    },
+    {
+      "say": "Number four. AMD rose thirteen percent Monday on an analyst upgrade and a Google cloud chip pick. Broadcom gained nearly nine percent too.",
+      "visual": {
+        "type": "rank",
+        "rank": 4,
+        "ticker": "AMD",
+        "company": "AMD",
+        "move_pct": 13.3,
+        "move_at": "rose",
+        "reason": "Analyst upgrade, Google Cloud chip pick",
+        "reason_at": "analyst",
+        "when": "Monday"
+      }
+    },
+    {
+      "say": "Number three. Nebius fell seventeen percent Thursday after pushing back its seven billion dollar revenue run-rate goal to February. Its revenue still rose more than five hundred percent.",
+      "visual": {
+        "type": "rank",
+        "rank": 3,
+        "ticker": "NBIS",
+        "company": "Nebius",
+        "move_pct": -16.8,
+        "move_at": "fell",
+        "reason": "$7B run-rate goal pushed to February",
+        "reason_at": "pushing",
+        "when": "Thursday"
+      }
+    },
+    {
+      "say": "Number two. CoreWeave jumped twenty-five percent Wednesday after raising its revenue forecast. Sales beat its own outlook, and rival Nebius rose fifteen percent too.",
+      "visual": {
+        "type": "rank",
+        "rank": 2,
+        "ticker": "CRWV",
+        "company": "CoreWeave",
+        "move_pct": 24.7,
+        "move_at": "jumped",
+        "reason": "Raised its 2026 revenue forecast",
+        "reason_at": "raising",
+        "when": "Wednesday"
+      }
+    },
+    {
+      "say": "And number one. Fervo Energy, a geothermal power company, surged twenty-six percent Monday after quarterly results showed about twelve billion dollars in power orders, including a Google deal.",
+      "visual": {
+        "type": "rank",
+        "rank": 1,
+        "ticker": "FRVO",
+        "company": "Fervo Energy",
+        "move_pct": 26.1,
+        "move_at": "surged",
+        "reason": "Q3 results: ~$12B in power orders",
+        "reason_at": "orders",
+        "when": "Monday"
+      }
+    },
+    {
+      "say": "Smaller, younger companies tend to swing more. Follow for one market move explained every day.",
+      "visual": {
+        "type": "outro",
+        "big": "Younger companies tend to swing more.",
+        "highlight": "swing more",
+        "highlight_at": "swing",
+        "cta": "Follow @whyitmoved",
+        "cta_sub": "A new stock move explained daily",
+        "cta_at": "Follow"
+      }
+    }
+  ]
+}
