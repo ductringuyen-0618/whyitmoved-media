@@ -1177,12 +1177,217 @@ def scene_split(img, v, t, spec, cues):
         d.text((960, y), it.get("display", ""), font=font("bold", 48), fill=tc + (A(p),), anchor="rm")
 
 
+# ---- format-creator additions (2026-11-15): "lineup" (suspect lineup) and "clock" (day clock) ----
+def _stamp(img, cx, cy, text, col, p, angle=-7, size=40):
+    """Rubber-stamp label that slams in (p 0..1)."""
+    if p <= 0:
+        return
+    f = font("bold", size)
+    probe = ImageDraw.Draw(Image.new("RGBA", (10, 10)))
+    tw = text_w(probe, text, f)
+    pad = 18
+    lay = Image.new("RGBA", (tw + pad * 2 + 8, size + pad * 2), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(lay)
+    ld.rounded_rectangle((2, 2, lay.width - 3, lay.height - 3), radius=14, outline=col + (255,), width=5, fill=col + (34,))
+    ld.text((lay.width // 2, lay.height // 2 + 1), text, font=f, fill=col + (255,), anchor="mm")
+    sc = 1.0 + 0.6 * (1 - ease(p / 0.6)) if p < 0.6 else 1.0
+    lay = lay.rotate(angle, resample=Image.BICUBIC, expand=True)
+    lay = lay.resize((max(1, int(lay.width * sc)), max(1, int(lay.height * sc))), Image.BICUBIC)
+    a = lay.getchannel("A").point(lambda x: int(x * clamp01(p / 0.25)))
+    lay.putalpha(a)
+    img.alpha_composite(lay, (int(cx - lay.width / 2), int(cy - lay.height / 2)))
+
+
+def scene_lineup(img, v, t, spec, cues):
+    """SUSPECT LINEUP: 2-4 possible explanations; each is questioned, then stamped RULED OUT (struck through)
+    or LIKELY CAUSE (lit up). kind: clear | partial | culprit. clue = the sourced fact behind the verdict."""
+    d = ImageDraw.Draw(img)
+    title = v.get("title", "The suspects")
+    ctext(d, 420, title.upper(), fit_font(d, title.upper(), "bold", 54, 940), C["muted"] + (A(t / 0.25),))
+    items = v["items"][:4]
+    n = len(items)
+    h = 232 if n <= 3 else 172
+    gap = 22 if n <= 3 else 16
+    y = 480
+    t_culprit = None
+    for it in items:
+        if it.get("kind") == "culprit":
+            t_culprit = cues.at(it.get("verdict_at"), cues.dur * 0.8)
+    for k, it in enumerate(items):
+        kind = it.get("kind", "clear")
+        tk = cues.at(it.get("at"), cues.spread(k, n, 0.05, 0.6))
+        tv = cues.at(it.get("verdict_at"), tk + 1.2)
+        yy = y + k * (h + gap)
+        if t < tk:
+            # waiting suspect: ghost card with its name, so the screen is never empty
+            pg = ease((t - 0.05 - 0.12 * k) / 0.3)
+            if pg > 0:
+                card(img, (70, yy, W - 70, yy + h), radius=30, fill=(255, 255, 255, int(12 * pg)))
+                d = ImageDraw.Draw(img)
+                d.text((215, yy + h // 2), it["name"], font=fit_font(d, it["name"], "bold", 52, 430, 34), fill=C["muted"] + (int(110 * pg),), anchor="lm")
+                d.ellipse((99, yy + h // 2 - 36, 171, yy + h // 2 + 36), outline=(110, 122, 150, int(160 * pg)), width=4)
+            continue
+        p = ease((t - tk) / 0.3)
+        slide = 0
+        done = t >= tv
+        pv = ease((t - tv) / 0.3)
+        col = C["down"] if kind == "culprit" else (C["accent"] if kind == "partial" else C["muted"])
+        dim = 1.0
+        if kind != "culprit" and t_culprit is not None and t >= t_culprit:
+            dim = 0.55
+        if kind == "culprit" and done:
+            fill, outline = col + (int(52 * pv),), col + (A(pv),)
+        else:
+            fill, outline = (255, 255, 255, int(20 * p * dim)), None
+        card(img, (70, yy + slide, W - 70, yy + h + slide), radius=30, fill=fill)
+        d = ImageDraw.Draw(img)
+        if outline:
+            d.rounded_rectangle((70, yy + slide, W - 70, yy + h + slide), radius=30, outline=outline, width=5)
+        # badge: ? while questioned, then x / ! / magnifier
+        bx, by = 135, yy + slide + h // 2
+        if not done:
+            d.ellipse((bx - 36, by - 36, bx + 36, by + 36), outline=C["accent"] + (A(p),), width=5)
+            d.text((bx, by + 2), "?", font=font("bold", 46), fill=C["accent"] + (A(p),), anchor="mm")
+        else:
+            if kind == "culprit":
+                rr = int(40 * (1 + 0.5 * (1 - ease((t - tv) / 0.2))))
+                d.ellipse((bx - rr, by - rr, bx + rr, by + rr), fill=C["down"] + (A(pv),))
+                d.text((bx, by + 2), "!", font=font("bold", int(rr * 1.45)), fill=(10, 14, 26, A(pv)), anchor="mm")
+            else:
+                _mark(d, bx, by, 40, "unknown" if kind == "partial" else "bad", scale=1 + 0.5 * (1 - ease((t - tv) / 0.2)), alpha=A(pv))
+            if kind == "clear":
+                d.ellipse((bx - 40, by - 40, bx + 40, by + 40), fill=(60, 72, 100, A(pv)))
+                k2 = 15
+                d.line([(bx - k2, by - k2), (bx + k2, by + k2)], fill=(205, 214, 232, A(pv)), width=8)
+                d.line([(bx - k2, by + k2), (bx + k2, by - k2)], fill=(205, 214, 232, A(pv)), width=8)
+        tx = 215
+        fn = fit_font(d, it["name"], "bold", 52, 430, 34)
+        tc = C["text"] if not (kind == "clear" and done) else C["muted"]
+        a_text = A(p * dim)
+        ny = yy + slide + (62 if h > 200 else 48)
+        d.text((tx, ny), it["name"], font=fn, fill=tc + (a_text,), anchor="lm")
+        if kind == "clear" and done:
+            _strike(d, tx, tx + text_w(d, it["name"], fn), ny, ease((t - tv) / 0.25), C["muted"] + (255,), width=7)
+        if it.get("clue") and done:
+            fc = font("medium", 36)
+            for i, line in enumerate(wrap(d, it["clue"], fc, 800)[:2]):
+                d.text((tx, ny + (62 if h > 200 else 50) + i * 44), line, font=fc, fill=(C["text"] if kind == "culprit" else C["muted"]) + (A(pv * dim),), anchor="lm")
+        if done:
+            label = it.get("verdict") or {"clear": "RULED OUT", "partial": "TOO SMALL", "culprit": "LIKELY CAUSE"}[kind]
+            _stamp(img, W - 228, yy + slide + (52 if h > 200 else 46), label, col if kind != "clear" else (190, 200, 220), (t - tv) / 0.35, angle=-6, size=40)
+            d = ImageDraw.Draw(img)
+
+
+def _clock_label(hhmm):
+    h, m = [int(x) for x in hhmm.split(":")]
+    suf = "a.m." if h < 12 else "p.m."
+    h12 = h % 12 or 12
+    return f"{h12}:{m:02d} {suf}"
+
+
+def _clock_minutes(hhmm):
+    h, m = [int(x) for x in hhmm.split(":")]
+    return h * 60 + m
+
+
+def scene_clock(img, v, t, spec, cues):
+    """DAY CLOCK: a dial whose hand sweeps through the sourced times of the day; each stop adds a chip
+    {time, label, value}. items up to 4 in time order: {time "HH:MM" (24h, ET), label, value ("+2.3%"), color up|down, at}."""
+    import math
+    d = ImageDraw.Draw(img)
+    title = v.get("title", "Hour by hour")
+    ctext(d, 420, title.upper(), fit_font(d, title.upper(), "bold", 52, 940), C["muted"] + (A(t / 0.25),))
+    items = v["items"][:4]
+    n = len(items)
+    cx, cy, r = 540, 752, 222
+    mins = [_clock_minutes(it["time"]) for it in items]
+    tks = [cues.at(it.get("at"), cues.spread(k, n, 0.05, 0.75)) for k, it in enumerate(items)]
+    # current (animated) minute-of-day: eases to each stop as it is spoken
+    cur = float(mins[0])
+    last_i = -1
+    for k in range(n):
+        if k == 0:
+            if t >= tks[0]:
+                last_i = 0
+            continue
+        t0, t1 = tks[k] - 0.7, tks[k]
+        if t >= t1:
+            cur, last_i = float(mins[k]), k
+        elif t > t0:
+            cur = mins[k - 1] + (mins[k] - mins[k - 1]) * ease((t - t0) / (t1 - t0))
+            break
+        else:
+            cur = float(mins[k - 1])
+            break
+    else:
+        cur = float(mins[-1])
+    # dial
+    d.ellipse((cx - r - 16, cy - r - 16, cx + r + 16, cy + r + 16), fill=(255, 255, 255, 14), outline=(120, 132, 160, 255), width=6)
+    for hh in range(12):
+        a = math.radians(hh * 30 - 90)
+        big = hh % 3 == 0
+        r0 = r - (26 if big else 14)
+        d.line([(cx + r0 * math.cos(a), cy + r0 * math.sin(a)), (cx + r * math.cos(a), cy + r * math.sin(a))], fill=(160, 172, 200, 255), width=6 if big else 3)
+    for hh, lab in ((0, "12"), (3, "3"), (6, "6"), (9, "9")):
+        a = math.radians(hh * 30 - 90)
+        d.text((cx + (r - 52) * math.cos(a), cy + (r - 52) * math.sin(a)), lab, font=font("bold", 34), fill=C["muted"] + (255,), anchor="mm")
+    # swept wedge from first stop to the hand, colored by the latest stop
+    ang_of = lambda m: (m / 60.0) * 30 - 90
+    if t >= tks[0]:
+        lastcol = colr(items[max(last_i, 0)].get("color"), "accent")
+        a0, a1 = ang_of(mins[0]), ang_of(cur)
+        if a1 > a0 + 0.5:
+            wedge = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            ImageDraw.Draw(wedge).pieslice((cx - r + 8, cy - r + 8, cx + r - 8, cy + r - 8), a0, a1, fill=lastcol + (60,))
+            img.alpha_composite(wedge)
+            d = ImageDraw.Draw(img)
+        ah = math.radians(a1)
+        d.line([(cx, cy), (cx + (r - 78) * math.cos(ah), cy + (r - 78) * math.sin(ah))], fill=C["text"] + (255,), width=10)
+        d.ellipse((cx - 14, cy - 14, cx + 14, cy + 14), fill=C["accent"] + (255,))
+        for k in range(n):
+            if t >= tks[k]:
+                am = math.radians(ang_of(mins[k]))
+                px, py = cx + (r + 2) * math.cos(am), cy + (r + 2) * math.sin(am)
+                ck = colr(items[k].get("color"), "accent")
+                pk = pop((t - tks[k]) / 0.35)
+                rr = int(14 * max(0.1, pk))
+                d.ellipse((px - rr, py - rr, px + rr, py + rr), fill=ck + (255,), outline=(8, 12, 24, 255), width=3)
+        # digital readout under the dial
+        hh_, mm_ = int(cur // 60), int(round(cur % 60))
+        if mm_ == 60:
+            hh_, mm_ = hh_ + 1, 0
+        ctext(d, cy + r + 62, _clock_label(f"{hh_}:{mm_:02d}") + " ET", font("bold", 56), C["text"] + (255,))
+    # chips: one row of up to 4
+    gx = 12
+    cw = (940 - gx * (n - 1)) // n
+    ch = 156
+    x0 = (W - (n * cw + gx * (n - 1))) // 2
+    y0 = cy + r + 105
+    for k, it in enumerate(items):
+        if t < tks[k]:
+            continue
+        p = ease((t - tks[k]) / 0.3)
+        col = colr(it.get("color"), "accent")
+        bx = x0 + k * (cw + gx)
+        by = y0 + int((1 - p) * 30)
+        card(img, (bx, by, bx + cw, by + ch), radius=26, fill=col + (int(40 * p),))
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle((bx, by, bx + cw, by + ch), radius=26, outline=col + (A(p),), width=4)
+        d.text((bx + cw // 2, by + 30), _clock_label(it["time"]), font=font("bold", 32), fill=C["muted"] + (A(p),), anchor="mm")
+        fv = fit_font(d, str(it["value"]), "bold", 70, cw - 44, 40)
+        d.text((bx + cw // 2, by + 88), str(it["value"]), font=fv, fill=col + (A(p),), anchor="mm")
+        d.text((bx + cw // 2, by + 132), it.get("label", ""), font=fit_font(d, it.get("label", ""), "medium", 34, cw - 16, 22), fill=C["text"] + (A(p),), anchor="mm")
+    if v.get("sub"):
+        ts = cues.at(v.get("sub_at"), 0.1)
+        ctext(d, 478, v["sub"], fit_font(d, v["sub"], "bold", 54, 960, 34), C["accent"] + (A((t - ts) / 0.3),))
+
+
 SCENES = {"hook": scene_hook, "headline": scene_headline, "stat": scene_stat, "bars": scene_bars, "compare": scene_compare,
           "line": scene_line, "bullets": scene_bullets, "scorecard": scene_scorecard,
           "text": scene_text, "outro": scene_outro, "question": scene_question, "rank": scene_rank,
           "chain": scene_chain, "beatmiss": scene_beatmiss, "timeline": scene_timeline, "peers": scene_peers,
           "mythfact": scene_mythfact, "quiz": scene_quiz, "poll": scene_poll, "decoder": scene_decoder, "shift": scene_shift, "receipts": scene_receipts, "qa": scene_qa,
-          "balance": scene_balance, "split": scene_split}
+          "balance": scene_balance, "split": scene_split, "lineup": scene_lineup, "clock": scene_clock}
 
 
 # ================================================================== frame furniture
@@ -1442,6 +1647,22 @@ def collect_events(beats: list[dict]) -> list[tuple[float, str]]:
                 ev.append((st + tk, "pop"))
                 if it.get("pill"):
                     ev.append((st + tk + 0.25, "stamp"))
+            continue
+        if kind == "lineup":
+            for k, it in enumerate(v["items"][:4]):
+                tk = cues.at(it.get("at"), cues.spread(k, len(v["items"][:4]), 0.05, 0.6))
+                ev.append((st + tk, "pop"))
+                ev.append((st + cues.at(it.get("verdict_at"), tk + 1.2) + 0.1, "stamp"))
+            continue
+        if kind == "clock":
+            its = v["items"][:4]
+            for k, it in enumerate(its):
+                tk = cues.at(it.get("at"), cues.spread(k, len(its), 0.05, 0.75))
+                if k > 0:
+                    ev.append((st + tk - 0.7, "whoosh1"))
+                ev.append((st + tk, "pop"))
+            if its:
+                ev.append((st + cues.at(its[-1].get("at"), cues.spread(len(its) - 1, len(its), 0.05, 0.75)) + 0.1, "stamp"))
             continue
         if kind == "decoder":
             for k, it in enumerate(v["items"][:3]):
