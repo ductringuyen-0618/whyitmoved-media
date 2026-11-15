@@ -1,0 +1,142 @@
+{
+  "slug": "EXPLAINER-guidance",
+  "chip": "EXPLAINED",
+  "topic": "Guidance",
+  "date_label": "Why It Moved 101",
+  "brand": "@whyitmoved",
+  "voice": "am_michael",
+  "loop": false,
+  "title": "What Is Guidance? (Why Corteva Dropped 24%) #shorts",
+  "description": "Company guidance explained in 35 seconds, using this week's Corteva forecast cut and CoreWeave forecast raise as examples. Guidance is a company's own forecast, and changes to it can move a stock.",
+  "hashtags": [
+    "guidance",
+    "investing101",
+    "stockmarket",
+    "corteva",
+    "personalfinance",
+    "shorts"
+  ],
+  "keywords": [
+    "guidance",
+    "forecast",
+    "hundred",
+    "eighty",
+    "Corteva",
+    "CoreWeave",
+    "twenty",
+    "future"
+  ],
+  "tape": [
+    "Guidance = company's own forecast",
+    "Stocks trade on the future",
+    "Example: CTVA cut its forecast",
+    "Example: CRWV raised its forecast"
+  ],
+  "sources": [
+    {
+      "title": "Corteva shares slide after Brazil weakness prompts annual profit forecast cut (Reuters via 104.9 The Wolf, Nov 12 2026)",
+      "url": "https://www.1049thewolf.com/2026/11/12/corteva-shares-slide-after-brazil-weakness-prompts-annual-profit-forecast-cut/"
+    },
+    {
+      "title": "Corteva Slides After Weak Q3 Results and Brazil-Driven Outlook Cut (Quiver Quantitative, Nov 12 2026)",
+      "url": "https://www.quiverquant.com/news/Corteva+Slides+After+Weak+Q3+Results+and+Brazil-Driven+Outlook+Cut"
+    },
+    {
+      "title": "CoreWeave Q3 2026: Revenue Up 168% as Guidance Rises (24/7 Wall St, Nov 2026)",
+      "url": "https://247wallst.com/cards/coreweave-q3-2026-earnings-crwv-01m73msrkgrgan75a5t7tb9fmz"
+    },
+    {
+      "title": "Stock Market Today, Nov 12 2026 closing moves (StockTitan)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026"
+    }
+  ],
+  "beats": [
+    {
+      "say": "One stock dropped about twenty four percent and another jumped about twenty four percent this week, both after changing their guidance. What is it?",
+      "visual": {
+        "type": "question",
+        "kicker": "Explained in 35 seconds",
+        "big": "What is guidance?",
+        "highlight": "guidance",
+        "sub": "one stock -24%, one +24%, same week"
+      }
+    },
+    {
+      "say": "It's a company's own forecast. Say it expects a hundred dollars of profit, then cuts that to eighty.",
+      "visual": {
+        "type": "bars",
+        "title": "Made-up forecast (example)",
+        "items": [
+          {
+            "label": "Old forecast",
+            "value": 100,
+            "display": "$100",
+            "color": "text",
+            "at": "hundred"
+          },
+          {
+            "label": "New forecast",
+            "value": 80,
+            "display": "$80",
+            "color": "down",
+            "at": "eighty"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Corteva cut its profit forecast on weak Brazil demand and dropped about twenty four percent. CoreWeave raised its revenue forecast and jumped about twenty four percent.",
+      "visual": {
+        "type": "compare",
+        "title": "This week's real examples",
+        "left": {
+          "label": "Corteva",
+          "value": "-24%",
+          "color": "down",
+          "sub": "cut its profit forecast",
+          "at": "Corteva"
+        },
+        "right": {
+          "label": "CoreWeave",
+          "value": "+24%",
+          "color": "up",
+          "sub": "raised its revenue forecast",
+          "at": "CoreWeave"
+        }
+      }
+    },
+    {
+      "say": "Guidance shows what management expects. Analysts reset their estimates, and stocks react to the change.",
+      "visual": {
+        "type": "bullets",
+        "title": "Why it matters",
+        "items": [
+          {
+            "text": "Shows what management expects",
+            "at": "Guidance"
+          },
+          {
+            "text": "Analysts reset their estimates",
+            "at": "Analysts"
+          },
+          {
+            "text": "Stocks react to the change",
+            "at": "stocks"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Stocks trade on the future, and guidance is the company's view of it. Follow for one market move explained every day.",
+      "visual": {
+        "type": "outro",
+        "big": "Stocks trade on the future. Guidance is the company's view of it.",
+        "highlight": "company's view",
+        "highlight_at": "company's",
+        "cta": "Follow @whyitmoved",
+        "cta_sub": "A new stock move explained daily",
+        "cta_at": "Follow"
+      }
+    }
+  ]
+}
